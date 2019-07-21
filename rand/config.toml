@@ -14,7 +14,7 @@ theme = "beautifulhugo"
   
 [[menu.main]]
     name = "Blog"
-    url = "rand.netlify.com"
+    url = ""
     weight = 1
 
 [[menu.main]]
