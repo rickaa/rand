@@ -1,6 +1,6 @@
 baseURL = "rand.netlify.com"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "rand"
 theme = "beautifulhugo"
 
 [Params]
@@ -14,7 +14,7 @@ theme = "beautifulhugo"
   
 [[menu.main]]
     name = "Blog"
-    url = ""
+    url = "rand.netlify.com"
     weight = 1
 
 [[menu.main]]
