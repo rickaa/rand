@@ -1,4 +1,4 @@
-baseurl = "rand.netlify.com"
+baseurl = "https://rand.netlify.com/"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "rand[om]"
