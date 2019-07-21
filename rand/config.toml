@@ -1,0 +1,23 @@
+baseURL = "rand.netlify.com"
+languageCode = "en-us"
+title = "My New Hugo Site"
+theme = "beautifulhugo"
+
+[Params]
+  subtitle = "Easily convert your Jupyter notebooks into a blog"
+  dateFormat = "January 2, 2006"
+
+[Author]
+  name = "Ricardo Ander-Egg Aguilar"
+  website = "rand.netlify.com"
+  email = "ricardo.anderegg@gmail.com"
+  
+[[menu.main]]
+    name = "Blog"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 2
