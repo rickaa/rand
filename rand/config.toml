@@ -16,7 +16,7 @@ pygmentsCodefencesGuessSyntax = true
 [Params]
 #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
   subtitle = "A blog about things"
-  logo = "img/bike.jpg"
+  logo = "img/bike.jpeg"
   #favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
