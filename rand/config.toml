@@ -16,8 +16,8 @@ pygmentsCodefencesGuessSyntax = true
 [Params]
 #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
   subtitle = "A blog about things"
-  logo = "/img/bike.jpeg"
-  favicon = "/img/favicon.ico"
+  logo = "img/bike.jpeg"
+  favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
   rss = true
@@ -41,7 +41,7 @@ pygmentsCodefencesGuessSyntax = true
 
 [Author]
   name = "Ricardo Ander-Egg"
-  website = ""
+  website = "rand.netlify.com"
   email = "ricardo.anderegg@gmail.com"
   # facebook = "username"
   # googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
