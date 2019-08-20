@@ -10,3 +10,6 @@
 [submodule "rand/themes/hugo-theme-basic"]
 	path = rand/themes/hugo-theme-basic
 	url = https://github.com/siegerts/hugo-theme-basic.git
+[submodule "rand/themes/hyde-hyde"]
+	path = rand/themes/hyde-hyde
+	url = https://github.com/htr3n/hyde-hyde.git
