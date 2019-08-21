@@ -10,7 +10,7 @@ pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 #pygmentsUseClassic = true
 #pygmentOptions = "linenos=inline"
-disqusShortname = "polyrand"
+disqusShortname = "rand-netlify"
 #googleAnalytics = "XXX"
 
 [Params]
