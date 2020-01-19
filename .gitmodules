@@ -13,3 +13,6 @@
 [submodule "rand/themes/hyde-hyde"]
 	path = rand/themes/hyde-hyde
 	url = https://github.com/htr3n/hyde-hyde.git
+[submodule "rand/themes/hugo-theme-even"]
+	path = rand/themes/hugo-theme-even
+	url = https://github.com/olOwOlo/hugo-theme-even.git
