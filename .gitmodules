@@ -16,3 +16,6 @@
 [submodule "rand/themes/hugo-theme-even"]
 	path = rand/themes/hugo-theme-even
 	url = https://github.com/olOwOlo/hugo-theme-even.git
+[submodule "rand/themes/hugo-coder"]
+	path = rand/themes/hugo-coder
+	url = https://github.com/luizdepra/hugo-coder.git

@@ -1,4 +1,4 @@
-baseurl = "https://rand.netlify.com/"
+baseurl = "https://ricardoanderegg.com/"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "rand[om]"
@@ -16,6 +16,7 @@ disqusShortname = "rand-netlify"
 [Params]
 #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
   subtitle = "A blog about things I discover and find interesting"
+  mainSections = "main"
   logo = "img/bike.jpeg"
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
@@ -25,6 +26,7 @@ disqusShortname = "rand-netlify"
   readingTime = true
   useHLJS = true
   socialShare = true
+  hideAuthor = true
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 #[[Params.bigimg]]
@@ -41,7 +43,7 @@ disqusShortname = "rand-netlify"
 
 [Author]
   name = "Ricardo Ander-Egg"
-  website = "rand.netlify.com"
+  website = "ricardoanderegg.com"
   email = "ricardo.anderegg@gmail.com"
   # facebook = "username"
   # googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
@@ -66,12 +68,12 @@ disqusShortname = "rand-netlify"
 
 [[menu.main]]
     name = "Blog"
-    url = ""
+    url = "posts"
     weight = 1
 
 [[menu.main]]
     name = "About"
-    url = "page/about/about"
+    url = "page/about"
     weight = 3
 
 # [[menu.main]]
@@ -97,7 +99,7 @@ disqusShortname = "rand-netlify"
 #     url = "post/2016-03-08-code-sample"
 #     weight = 3
 
-[[menu.main]]
-    name = "Tags"
-    url = "tags"
-    weight = 3
+# [[menu.main]]
+#     name = "Tags"
+#     url = "tags"
+#     weight = 3
