@@ -1,4 +1,4 @@
-[submodule "rand/themes/beautifulhugo"]
+[submodule "rand/themes/bu_beautifulhugo"]
 	path = rand/themes/beautifulhugo
 	url = https://github.com/halogenica/beautifulhugo.git
 [submodule "rand/themes/hyde"]
