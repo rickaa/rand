@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://ricardoanderegg.com/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/bugs/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/posts/fixing_ghcup_bug/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/ghcup/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/git/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/github/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/gitlab/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/haskell/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/haskell/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/open-source/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/open-source/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/posts/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/</loc>
+    <lastmod>2020-01-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/abstraction/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/abstraction/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/posts/divide_search_abstract/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/problem/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/problem/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/solving/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/solving/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/thinking/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/thinking/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/tips/</loc>
+    <lastmod>2019-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/classification/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/fasttext/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/fasttext/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/identification/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/language/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/language/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/posts/langid_fasttext/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/nlp/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/nlp/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/text/</loc>
+    <lastmod>2019-08-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/jupyter/</loc>
+    <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/jupyter/</loc>
+    <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/posts/notebook_linking/</loc>
+    <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/notebook/</loc>
+    <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/notebook/</loc>
+    <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/trick/</loc>
+    <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/trick/</loc>
+    <lastmod>2019-07-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/black/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/posts/black_jupyter/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/code/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/comprehension/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/formatting/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/formatting/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/list/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/categories/pandas/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/tags/pandas/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ricardoanderegg.com/page/</loc>
+  </url>
+  
+</urlset>

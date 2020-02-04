@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Language identification with fastText - rand[om]</title>
+  <meta name="description" content="When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I&rsquo;ll show a way to do a fast ⚡️ and reliable ✨ languague identification with fasttext.">
+  <meta name="author" content="Ricardo Ander-Egg"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "rand[om]",
+    
+    "url": "https:\/\/ricardoanderegg.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/ricardoanderegg.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/ricardoanderegg.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/ricardoanderegg.com\/posts\/langid_fasttext\/",
+          "name": "Language identification with fast text"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Ricardo"
+  },
+  "headline": "Language identification with fastText",
+  "description" : "When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I\x26rsquo;ll show a way to do a fast ⚡️ and reliable ✨ languague identification with fasttext.\n",
+  "inLanguage" : "en",
+  "wordCount":  606 ,
+  "datePublished" : "2019-08-20T00:00:00",
+  "dateModified" : "2019-08-20T00:00:00",
+  "image" : "https:\/\/ricardoanderegg.com\/img\/bike.jpeg",
+  "keywords" : [ "fasttext, nlp, text, language, identification, classification" ],
+  "mainEntityOfPage" : "https:\/\/ricardoanderegg.com\/posts\/langid_fasttext\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/ricardoanderegg.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/ricardoanderegg.com\/img\/bike.jpeg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Language identification with fastText" />
+<meta property="og:description" content="When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I&rsquo;ll show a way to do a fast ⚡️ and reliable ✨ languague identification with fasttext.">
+<meta property="og:image" content="https://ricardoanderegg.com/img/bike.jpeg" />
+<meta property="og:url" content="https://ricardoanderegg.com/posts/langid_fasttext/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="rand[om]" />
+
+  <meta name="twitter:title" content="Language identification with fastText" />
+  <meta name="twitter:description" content="When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I&rsquo;ll show a way to do a fast ⚡️ and reliable ✨ languague …">
+  <meta name="twitter:image" content="https://ricardoanderegg.com/img/bike.jpeg" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@ricardoanderegg" />
+  <meta name="twitter:creator" content="@ricardoanderegg" />
+  <link href='https://ricardoanderegg.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.63.2" />
+  <link rel="alternate" href="https://ricardoanderegg.com/index.xml" type="application/rss+xml" title="rand[om]"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://ricardoanderegg.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://ricardoanderegg.com/css/highlight.min.css" /><link rel="stylesheet" href="https://ricardoanderegg.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ricardoanderegg.com/">rand[om]</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/posts">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="rand[om]" href="https://ricardoanderegg.com/">
+            <img class="avatar-img" src="https://ricardoanderegg.com/img/bike.jpeg" alt="rand[om]" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Language identification with fastText</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I&rsquo;ll show a way to do a fast ⚡️ and reliable ✨ languague identification with <a href="https://fasttext.cc">fasttext</a>.</p>
+<p><strong>TL;DR</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">fasttext</span>
+
+<span class="n">lid_model</span> <span class="o">=</span> <span class="n">fasttext</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">lid.176.bin</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">detector</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="p">:</span>
+    <span class="c1"># return empty string if there is no tweet</span>
+    <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">isspace</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&#34;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># get first item of the prediction tuple, then split by &#34;__label__&#34; and return only language code</span>
+        <span class="k">return</span> <span class="n">lid_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">__label__</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">language</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tweet</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">detector</span><span class="p">)</span>
+</code></pre></div><p>First we need to download a dataset to play with. We&rsquo;ll use the <a href="https://github.com/Kaggle/kaggle-api">kaggle CLI tool</a>. Run the following command after installing it or download the dataset <a href="https://www.kaggle.com/rtatman/the-umass-global-english-on-twitter-dataset">directly from kaggle</a>.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">kaggle datasets download -d rtatman/the-umass-global-english-on-twitter-dataset
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">the-umass-global-english-on-twitter-dataset.zip</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="sa"></span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><!-- raw HTML omitted -->
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}
+</code></pre>
+<p><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="sa"></span><span class="s2">&#34;&#34;&#34;</span><span class="s2">There are: {df.Tweet.shape[0]} tweets.</span><span class="s2">
+</span><span class="s2"></span><span class="s2">    </span><span class="s2">
+</span><span class="s2"></span><span class="s2">First 10 tweets:</span><span class="s2">
+</span><span class="s2"></span><span class="s2">    </span><span class="s2">
+</span><span class="s2"></span><span class="s2">{df[</span><span class="s2">&#39;</span><span class="s2">Tweet</span><span class="s2">&#39;</span><span class="s2">].head(10)}</span><span class="s2">&#34;&#34;&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>There are: 10502 tweets.
+    
+First 10 tweets:
+    
+0                            Bugün bulusmami lazimdiii
+1       Volkan konak adami tribe sokar yemin ederim :D
+2                                                  Bed
+3    I felt my first flash of violence at some fool...
+4              Ladies drink and get in free till 10:30
+5                     @Melanynijholtxo ahhahahahah dm!
+6                                                 Fuck
+7    Watching #Miranda On bbc1!!! @mermhart u r HIL...
+8                                       @StizZsti fino
+9            Shopping! (@ Kohl's) http://t.co/I8ZkQHT9
+Name: Tweet, dtype: object
+</code></pre>
+<p>Looking at the first 10 tweets we can already see the are multiple languags been used. Lets now use fasttext to classify them. You need to download the language indentification model to use it, run the following shell command if you need to do so.</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">wget https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
+</code></pre></div><p>Alternatively, you can use a slightly less accurate but a lot smaller model:</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash">wget https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.ftz
+</code></pre></div><p>And now we can use it.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">fasttext</span>
+
+<span class="n">lid_model</span> <span class="o">=</span> <span class="n">fasttext</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">lid.176.bin</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div><p>Create a list in which each item is a tweet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">corpus</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tweet</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><p>Predict the language of the first tweet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">tweet</span> <span class="o">=</span> <span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="n">lid_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Text:</span><span class="se">\n</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> {tweet} </span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> Prediction:</span><span class="se">\n</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> {prediction}</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>Text:
+     Bugün bulusmami lazimdiii 
+ 
+ Prediction:
+     (('__label__tr',), array([0.77383512]))
+</code></pre>
+<p>The output of the prediction is a tuple of language label and prediction confidence. Language label is a string with “_<em>label</em>_” followed by ISO 639 code of the language. You can check the language codes <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php">here</a> and the languages supported by fasttext at the end of <a href="https://fasttext.cc/blog/2017/10/02/blog-post.html">their blog post</a>.</p>
+<p>Lets try with a different one.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">Text:</span><span class="se">\n</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> {corpus[4]} </span><span class="se">\n</span><span class="s2"> </span><span class="se">\n</span><span class="s2"> Prediction:</span><span class="se">\n</span><span class="s2"> </span><span class="se">\t</span><span class="s2"> {lid_model.predict(corpus[4])}</span><span class="s2">&#34;</span><span class="p">)</span>
+</code></pre></div><pre><code>Text:
+     Ladies drink and get in free till 10:30 
+ 
+ Prediction:
+     (('__label__en',), array([0.65553886]))
+</code></pre>
+<p>Now we can create a new column with the langue of each tweet.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">detector</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="p">:</span>
+    <span class="c1"># return empty string if there is no tweet</span>
+    <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">isspace</span><span class="p">(</span><span class="p">)</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">&#34;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># get first item of the prediction tuple, then split by &#34;__label__&#34; and return only language code</span>
+        <span class="k">return</span> <span class="n">lid_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">__label__</span><span class="s2">&#34;</span><span class="p">)</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="o">%</span><span class="o">%</span><span class="n">time</span>
+<span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">language</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="sa"></span><span class="s1">&#39;</span><span class="s1">Tweet</span><span class="s1">&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">detector</span><span class="p">)</span>
+</code></pre></div><pre><code>CPU times: user 258 ms, sys: 4.17 ms, total: 262 ms
+Wall time: 266 ms
+</code></pre>
+<p>I added the <code>%%time</code> IPython <a href="https://ipython.readthedocs.io/en/stable/interactive/magics.html">command</a> to show one of the main reasons to use fasttext, the speed ⚡️. <strong>In 250ms I processed 10502 tweets</strong> working on a 2016 laptop with a dual-core 2 GHz Intel Core i5 processor.</p>
+<p>The speed of fastText can also be compared with <a href="https://github.com/saffsd/langid.py">langid.py</a> in this table from their <a href="https://fasttext.cc/blog/2017/10/02/blog-post.html">blog</a>.</p>
+<p><img src="https://fasttext.cc/img/blog/2017-10-02-blog-post-img1.png" alt=""></p>
+<p>Finally, if we wanted to work only with a subset of the languages and convert the rest to <em>&ldquo;unk&rdquo;</em> (and maybe use a multilingual model when working with them), we can use the following.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># keep the 4 top languages according to the current predictions</span>
+<span class="n">languanges_keep</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">language</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">to_list</span><span class="p">(</span><span class="p">)</span>
+
+<span class="c1"># create a custom list</span>
+<span class="n">languanges_keep</span> <span class="o">=</span> <span class="p">[</span><span class="sa"></span><span class="s2">&#34;</span><span class="s2">en</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">es</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">pt</span><span class="s2">&#34;</span><span class="p">,</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">ja</span><span class="s2">&#34;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">language</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">languanges_keep</span><span class="p">)</span><span class="p">,</span> <span class="sa"></span><span class="s1">&#39;</span><span class="s1">language</span><span class="s1">&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa"></span><span class="s2">&#34;</span><span class="s2">unk</span><span class="s2">&#34;</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">language</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="p">)</span>
+</code></pre></div><pre><code>en     5735
+unk    2247
+es     1139
+pt      876
+ja      505
+Name: language, dtype: int64
+</code></pre>
+<p>And from here we can keep working with our text data!</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ricardoanderegg.com//tags/fasttext/">fasttext</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/nlp/">nlp</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/text/">text</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/language/">language</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/identification/">identification</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/classification/">classification</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fricardoanderegg.com%2fposts%2flangid_fasttext%2f&amp;text=Language%20identification%20with%20fastText&amp;via=ricardoanderegg" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fricardoanderegg.com%2fposts%2flangid_fasttext%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fricardoanderegg.com%2fposts%2flangid_fasttext%2f&amp;title=Language%20identification%20with%20fastText" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fricardoanderegg.com%2fposts%2flangid_fasttext%2f&amp;title=Language%20identification%20with%20fastText" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fricardoanderegg.com%2fposts%2flangid_fasttext%2f&amp;title=Language%20identification%20with%20fastText" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fricardoanderegg.com%2fposts%2flangid_fasttext%2f&amp;description=Language%20identification%20with%20fastText" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ricardoanderegg.com/posts/notebook_linking/" data-toggle="tooltip" data-placement="top" title="Linking notebooks">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://ricardoanderegg.com/posts/divide_search_abstract/" data-toggle="tooltip" data-placement="top" title="Divide ➗ Search 🔍 Abstract 🔭">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rand-netlify" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ricardo.anderegg@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/rickaa" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/ricardoanderegg" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/ricardoanderegg" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/rick_dolphin" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="ricardoanderegg.com">Ricardo Ander-Egg</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ricardoanderegg.com/">rand[om]</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.63.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ricardoanderegg.com/js/main.js"></script>
+<script src="https://ricardoanderegg.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://ricardoanderegg.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

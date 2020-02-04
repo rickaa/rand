@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on rand[om]</title>
+    <link>https://ricardoanderegg.com/page/</link>
+    <description>Recent content in Pages on rand[om]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</managingEditor>
+    <webMaster>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</webMaster>
+    
+	<atom:link href="https://ricardoanderegg.com/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About me</title>
+      <link>https://ricardoanderegg.com/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/page/about/</guid>
+      <description>My name is Ricardo Ander-Egg Aguilar. I am currently studyng medicine in Barcelona.
+I really love programming, maths, statistics and thinking about how current problems can be solved.
+Regarding my other interests, I have been a swimmer for 15 years, sport is just a part of me. I love hiking and travelling, I am also a salsa dancer and when I have some spare time I edit travel videos, which you can check on my YouTube channel.</description>
+    </item>
+    
+  </channel>
+</rss>
