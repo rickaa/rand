@@ -16,7 +16,7 @@ disqusShortname = "rand-netlify"
 [Params]
 #  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
   subtitle = "A blog about things I discover and find interesting"
-  mainSections = "main"
+  # mainSections = "main"
   logo = "img/bike.jpeg"
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
