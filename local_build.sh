@@ -7,5 +7,6 @@ done
 MKDS="$(find thoughts -type f -name '*.md' ! -name '_*')"
 for f in $MKDS
 do
+    echo "Creating post $f"
     cp $f rand/content/thoughts
 done
