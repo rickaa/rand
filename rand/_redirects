@@ -1,1 +1,1 @@
-/post/*  /posts/:splat
+/post/*  /posts/:splat  200
