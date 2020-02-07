@@ -1,6 +1,9 @@
 # These rules will change if you change your site’s custom domains or HTTPS settings
 
+# SEO
 # Redirect default Netlify subdomain to primary domain
 https://rand.netlify.com/* https://ricardoanderegg.com/:splat 301!
 
-/post/*  /posts/:splat  301!
+# Old posts
+https://rand.netlify.com/post/*  https://ricardoanderegg.com/posts/:splat  301!
+https://ricardoandergg.com/post/*  https://ricardoanderegg.com/posts/:splat  301!
