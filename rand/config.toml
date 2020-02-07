@@ -12,21 +12,25 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentOptions = "linenos=inline"
 disqusShortname = "rand-netlify"
 #googleAnalytics = "XXX"
+enableEmoji = true
+enableGitInfo = true
+
 
 [Params]
-#  homeTitle = "Beautiful Hugo Theme" # Set a different text for the header on the home page
+  homeTitle = "Ricardo" # Set a different text for the header on the home page
   subtitle = "👨🏻‍⚕️ Medicine ∩ Machine Learning 🤖"
   # mainSections = "main"
   logo = "img/bike.jpeg"
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
-  commit = false
+  # commit = false
   rss = true
   comments = true
   readingTime = true
   useHLJS = true
   socialShare = true
   hideAuthor = true
+  commit = "https://https://github.com/polyrand/rand/tree/"
 #  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
 #[[Params.bigimg]]
@@ -47,7 +51,7 @@ disqusShortname = "rand-netlify"
   email = "ricardo.anderegg@gmail.com"
   # facebook = "username"
   # googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
-  github = "rickaa"
+  github = "polyrand"
   # gitlab = "username"
   # bitbucket = "username"
   twitter = "ricardoanderegg"
@@ -70,6 +74,11 @@ disqusShortname = "rand-netlify"
     name = "Blog"
     url = "posts"
     weight = 1
+
+[[menu.main]]
+    name = "Thoughts"
+    url = "thoughts"
+    weight = 2
 
 [[menu.main]]
     name = "About"
