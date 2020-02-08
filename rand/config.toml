@@ -12,7 +12,7 @@ pygmentsCodefencesGuessSyntax = true
 #pygmentOptions = "linenos=inline"
 disqusShortname = "rand-netlify"
 #googleAnalytics = "XXX"
-enableEmoji = true
+# enableEmoji = true
 # enableGitInfo = false
 
 
