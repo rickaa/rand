@@ -13,7 +13,7 @@ pygmentsCodefencesGuessSyntax = true
 disqusShortname = "rand-netlify"
 #googleAnalytics = "XXX"
 enableEmoji = true
-enableGitInfo = false
+# enableGitInfo = false
 
 
 [Params]
