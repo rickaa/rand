@@ -52,7 +52,7 @@ disqusShortname = "rand-netlify"
   # facebook = "username"
   # googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
   github = "polyrand"
-  # gitlab = "username"
+  gitlab = "polyrand"
   # bitbucket = "username"
   twitter = "ricardoanderegg"
   # reddit = "username"
@@ -84,6 +84,10 @@ disqusShortname = "rand-netlify"
     name = "About"
     url = "page/about"
     weight = 3
+
+[taxonomies]
+  category = "categories"
+  # tag = "tags"
 
 # [[menu.main]]
 #     identifier = "samples"
