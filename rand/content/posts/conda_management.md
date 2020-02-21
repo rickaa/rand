@@ -4,6 +4,7 @@ date = "2020-02-21"
 author = "Ricardo"
 categories = ["conda", "environments"]
 tags = ["conda", "environment", "python"]
+thumbnail = ""img/sharing/conda_management.jpg""
 +++
 
 
@@ -100,6 +101,8 @@ conda deactivate
 ```
 
 And now from anywhere I can run `blab` to run Jupyterlab and create a new notebook using the environment called "nlp".
+
+Lastly, you can run `jupyter kernelspec list` with the "dev" environment activated to list the registered kernels and `jupyter kernelspec uninstall <name>` to remove the kernel called `<name>`.
 
 References:
 
