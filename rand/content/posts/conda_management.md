@@ -13,7 +13,7 @@ Manage conda environments and Jupyterlab easily.
 
 **TL;DR** Use [this](https://github.com/polyrand/scripts/blob/master/condacreate_dev.sh) script to create a base conda environment with Jupyterlab and some plugins, and [this](https://github.com/polyrand/scripts/blob/master/condacreate.sh) to create new environments and make them available when launching Jupyter.
 
-I used to have a default script to create a conda environment, in that script I would install al the packages I consider basic, plus Jupyterlab and some plugins. Yes a new fresh Jupyterlab+plugins for every environment.
+Managin environments in Python can be tricky. I used to have a default script to create a conda environment, in that script I would install al the packages I consider basic, plus Jupyterlab and some plugins. Yes a new fresh Jupyterlab+plugins for every environment.
 
 A few days ago I read [this tweet by Vicki Boykis](https://twitter.com/vboykis/status/1229813718776786944) and [one of the answers from Peter Baumgartner](https://twitter.com/pmbaumgartner/status/1229880784342917122) and decided to change my workflow a little bit. Now I use the 2 scripts I linked above, and I will go through explaining what they do. Hopefully you can also learn a bit about conda too.
 
@@ -23,13 +23,13 @@ A few days ago I read [this tweet by Vicki Boykis](https://twitter.com/vboykis/s
 conda create --name "$NAME" python="$VERSION"
 ```
 
-With that we create a new conda environment with the name we want and a pyhon version, in my case I execute the script like: `./condacreate_dev.sh dev 3.7` and it creates an environment called "dev" using Python 3.7.
+With that we create a new conda environment with the name we want and a Python version, in my case I execute the script like: `./condacreate_dev.sh dev 3.7` and it creates an environment called "dev" using Python 3.7.
 
 ```sh
 conda install -y --name "$NAME" -c conda-forge ipython jupyterlab nb_conda_kernels
 ```
 
-Now we install the python packages I mentioned before. Using the flag `-y` we accept the installation by default so we don't need to interact with our terminalm the flag `--name` lets you execute the command in the environment with that name (in this case it's "dev").
+Now we install the python packages I mentioned before. Using the flag `-y` we accept the installation by default so we don't need to interact with our terminal the flag `--name` lets you execute the command in the environment with that name (in this case it's "dev").
 
 Then I install the extensions I use:
 
@@ -61,7 +61,7 @@ fi
 
 With those I can create an alias with the same name of the environment to activate it, so if my initial command was `./condacreate_dev.sh dev 3.7 alias` it would have create an alias so that by running the command `dev` in my terminal would activate that environment.
 
-[condacreate.sh](https://github.com/polyrand/scripts/blob/master/condacreate.sh): the second one creates a default environment with the base packages. At the end we run:
+[condacreate.sh](https://github.com/polyrand/scripts/blob/master/condacreate.sh): the second one creates an environment with the base packages I use. At the end we run:
 
 ```sh
 conda run -n "$NAME" ipython kernel install --user --name="$NAME"
