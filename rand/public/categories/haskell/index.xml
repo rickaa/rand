@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>haskell on rand[om]</title>
+    <link>https://ricardoanderegg.com/categories/haskell/</link>
+    <description>Recent content in haskell on rand[om]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</managingEditor>
+    <webMaster>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</webMaster>
+    <lastBuildDate>Thu, 16 Jan 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ricardoanderegg.com/categories/haskell/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing a bug in the Haskell installer</title>
+      <link>https://ricardoanderegg.com/posts/fixing_ghcup_bug/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/posts/fixing_ghcup_bug/</guid>
+      <description>&lt;p&gt;The story of a bug fix. I found a bug in the default Haskell installer &lt;a href=&#34;https://gitlab.haskell.org/haskell/ghcup&#34;&gt;ghcup&lt;/a&gt;, fixed it in my computer and had the fix merged to the public installer.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

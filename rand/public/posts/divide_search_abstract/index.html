@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Divide ➗ Search 🔍 Abstract 🔭 - rand[om]</title>
+  <meta name="description" content="Some problems are harder than others, but having a system to approach them makes a big difference.">
+  <meta name="author" content="Ricardo Ander-Egg"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "rand[om]",
+    
+    "url": "https:\/\/ricardoanderegg.com\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/ricardoanderegg.com\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/ricardoanderegg.com\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/ricardoanderegg.com\/posts\/divide_search_abstract\/",
+          "name": "Divide ➗ search 🔍 abstract 🔭"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Ricardo"
+  },
+  "headline": "Divide ➗ Search 🔍 Abstract 🔭",
+  "description" : "Some problems are harder than others, but having a system to approach them makes a big difference.\n",
+  "inLanguage" : "en",
+  "wordCount":  876 ,
+  "datePublished" : "2019-11-28T00:00:00",
+  "dateModified" : "2019-11-28T00:00:00",
+  "image" : "https:\/\/ricardoanderegg.com\/img\/bike.jpeg",
+  "keywords" : [ "problem, solving, abstraction, thinking" ],
+  "mainEntityOfPage" : "https:\/\/ricardoanderegg.com\/posts\/divide_search_abstract\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/ricardoanderegg.com\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/ricardoanderegg.com\/img\/bike.jpeg",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Divide ➗ Search 🔍 Abstract 🔭" />
+<meta property="og:description" content="Some problems are harder than others, but having a system to approach them makes a big difference.">
+
+<meta property="og:image" content="https://ricardoanderegg.com/img/bike.jpeg" />
+
+<meta property="og:url" content="https://ricardoanderegg.com/posts/divide_search_abstract/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="rand[om]" />
+
+  <meta name="twitter:title" content="Divide ➗ Search 🔍 Abstract 🔭" />
+<meta name="twitter:description" content="Some problems are harder than others, but having a system to approach them makes a big difference.">
+
+<meta name="twitter:image" content="https://ricardoanderegg.com/img/bike.jpeg" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@ricardoanderegg" />
+<meta name="twitter:creator" content="@ricardoanderegg" />
+
+  <link href='https://ricardoanderegg.com/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.65.2" />
+  <link rel="alternate" href="https://ricardoanderegg.com/index.xml" type="application/rss+xml" title="rand[om]"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://ricardoanderegg.com/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://ricardoanderegg.com/css/highlight.min.css" /><link rel="stylesheet" href="https://ricardoanderegg.com/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://ricardoanderegg.com/">rand[om]</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Blog" href="/posts">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Thoughts" href="/thoughts">Thoughts</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="About" href="/page/about">About</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="rand[om]" href="https://ricardoanderegg.com/">
+            <img class="avatar-img" src="https://ricardoanderegg.com/img/bike.jpeg" alt="rand[om]" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="posts-heading">
+              
+                <h1>Divide ➗ Search 🔍 Abstract 🔭</h1>
+              
+              
+                <hr class="small">
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Some problems are harder than others, but having a system to approach them makes a big difference.</p>
+<p>Yesterday I finished teaching my first Python course. Apart from teaching about generators, decorators, coroutines, multiprocessing, pandas, flask, pytest, docker&hellip; and a long list of development tools and Python modules, I tried to transmit an important message I believe is a lot more fundamental than knowing all the technicalities, and it is problem solving.</p>
+<p>We, not only as programmers but in life in general, have to solve things constantly, wether it&rsquo;s at work, at home, or with ourselves. Facing the problem as such can become daunting and look impossible at first, having techniques to work through them can be an incredibly helpful tool. For me that technique can be summarized in three words: Divide. Search. Abstract.</p>
+<p>To illustrate the method I will use a simple problem: writing a function to generate random email strings.</p>
+<p>First, we <strong>divide</strong> the problem as much as we can or need. In our case the first division may be:</p>
+<ul>
+<li>Make random choices for things.</li>
+<li>Generate username.</li>
+<li>Generate domain <code>(gmail hotmail outlook ...)</code>.</li>
+<li>Generate domain root <code>(.com .es .org .edu ...)</code>.</li>
+</ul>
+<p>Lets now tackle the first part. We need to be able to make random choices, that looks like a very common problem, so the chances someone has already worked on that are very high. A quick Google <strong>search</strong> lands us on the Python documentation from the <a href="https://docs.python.org/3/library/random.html">random</a> module, and it seems the method <code>random.choice()</code> does just that.</p>
+<p>Now we need to generate the username, we can <strong>divide</strong> that problem as well:</p>
+<ul>
+<li>Generate username:
+<ul>
+<li>Create a set of all the possible characters we want.</li>
+<li>Choose random elements from that set.</li>
+<li>Make the user able to choose the length of the username created.</li>
+</ul>
+</li>
+</ul>
+<p>For the first part, another quick <strong>search</strong> tells us about <code>string.ascii_lowercase</code>, which is just what we need. The second part was already solved before. Lets see if they work together.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_lowercase</span> <span class="k">as</span> <span class="n">letters</span>
+
+<span class="n">choice</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span>
+</code></pre></div><pre><code>'l'
+</code></pre>
+<p>Fantastic, we have already solve a tiny bit of our problem, we only need to make a loop and generate many random letters. For this part, a list comprehension together with <code>range()</code> will make it for us.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span><span class="n">choice</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</code></pre></div><pre><code>['k', 'm', 'm', 'o', 'i', 'd', 'x', 't', 'j', 'f']
+</code></pre>
+<p>Lastly, we need to concatenate those characters. Another <strong>search</strong> will show us the <code>str.join()</code> method:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">choice</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+</code></pre></div><pre><code>'dgiqtxxlmg'
+</code></pre>
+<p>Awesome 🎉, we have done the first part of our problem, and not only that, now we are more prepared for the next parts.</p>
+<p>Choosing random letters to get a valid domain and root doesn&rsquo;t look appropiate, having our own lists for that seems easier:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;gmail&#34;</span><span class="p">,</span> <span class="s2">&#34;hotmail&#34;</span><span class="p">,</span> <span class="s2">&#34;outlook&#34;</span><span class="p">,</span><span class="s2">&#34;yahoo&#34;</span><span class="p">]</span>
+<span class="n">roots</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;.com&#34;</span><span class="p">,</span> <span class="s2">&#34;.xyz&#34;</span><span class="p">,</span> <span class="s2">&#34;.es&#34;</span><span class="p">,</span> <span class="s2">&#34;.org&#34;</span><span class="p">]</span>
+</code></pre></div><p>We can check if our previous knowledge can be used here too:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">domains</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">choice</span><span class="p">(</span><span class="n">roots</span><span class="p">))</span>
+</code></pre></div><pre><code>outlook
+.xyz
+</code></pre>
+<p>We have already solved many important points of our problem, so it may be a good idea to start <strong>abstracting</strong> them inside a function. By <strong>abtracting</strong> it we are not only freeing space in our minds, but also making it easier for other people to use, work with and build upon what we have created.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mail_generator</span><span class="p">():</span>
+    <span class="n">domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;gmail&#34;</span><span class="p">,</span> <span class="s2">&#34;hotmail&#34;</span><span class="p">,</span> <span class="s2">&#34;outlook&#34;</span><span class="p">,</span> <span class="s2">&#34;yahoo&#34;</span><span class="p">]</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;.com&#34;</span><span class="p">,</span> <span class="s2">&#34;.xyz&#34;</span><span class="p">,</span> <span class="s2">&#34;.es&#34;</span><span class="p">,</span> <span class="s2">&#34;.org&#34;</span><span class="p">,</span> <span class="s2">&#34;.pl&#34;</span><span class="p">]</span>
+
+    <span class="n">username</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">choice</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)])</span>
+    
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">domains</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
+    
+    <span class="n">final_string</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&#34;{username}@{domain}{root}&#34;</span>
+    
+    <span class="k">return</span> <span class="n">final_string</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mail_generator</span><span class="p">()</span>
+</code></pre></div><pre><code>'udirqpnyft@hotmail.xyz'
+</code></pre>
+<p>It works 🥳. But wait! All of our emails will have the same length, maybe we want to let our users choose a length interval. If we want, we can <strong>divide</strong> that part as well:</p>
+<ul>
+<li>Let the user choose the length:
+<ul>
+<li>Generate a random integer.</li>
+<li>Use it for our length.</li>
+</ul>
+</li>
+</ul>
+<p>Another <strong>search</strong> gives us the answer, that <code>random</code> makes a comeback with its <code>randint()</code> method, which solves our problem all at once, since it lets us pick an interval.</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+
+<span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+</code></pre></div><pre><code>9
+</code></pre>
+<p>We can wrap everything up by refactoring our function, we need to give it two parameters and put the <code>randint()</code> inside our <code>range()</code>:</p>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">mail_generator</span><span class="p">(</span><span class="n">minimum</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">maximum</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">domains</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;gmail&#34;</span><span class="p">,</span> <span class="s2">&#34;hotmail&#34;</span><span class="p">,</span> <span class="s2">&#34;outlook&#34;</span><span class="p">,</span> <span class="s2">&#34;yahoo&#34;</span><span class="p">]</span>
+    <span class="n">roots</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&#34;.com&#34;</span><span class="p">,</span> <span class="s2">&#34;.xyz&#34;</span><span class="p">,</span> <span class="s2">&#34;.es&#34;</span><span class="p">,</span> <span class="s2">&#34;.org&#34;</span><span class="p">,</span> <span class="s2">&#34;.pl&#34;</span><span class="p">]</span>
+
+    <span class="n">username</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">choice</span><span class="p">(</span><span class="n">letters</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">randint</span><span class="p">(</span><span class="n">minimum</span><span class="p">,</span> <span class="n">maximum</span><span class="p">))])</span>
+
+    <span class="n">domain</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">domains</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">choice</span><span class="p">(</span><span class="n">roots</span><span class="p">)</span>
+
+    <span class="n">final_string</span> <span class="o">=</span> <span class="n">f</span><span class="s2">&#34;{username}@{domain}{root}&#34;</span>
+
+    <span class="k">return</span> <span class="n">final_string</span>
+</code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mail_generator</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+</code></pre></div><pre><code>'xeuxgsfvu@outlook.xyz'
+</code></pre>
+<p>Finally! We have finished our function. Now we can keep working on it adding features as we want (choosing domain roots depending on the domain name, adding numbers to the username, etc), but our main problem is done.</p>
+<p>I know the problem showed here is quite simple, but it&rsquo;s more than enough to illustrate the technique.</p>
+<p>Problems may be more or less tedious to solve, but by dividing them into smaller parts, seraching for information to solve those smaller parts (Google, documentation, books&hellip;), and finally abstracting those, will get us a lot closer to solving it than if we just try to approach it as a whole.</p>
+<p>In the end, if we are where we are, solving the problems of our current time is because some people in the past took the problems of their time, solved their little parts and then abstracted that solution into a tool we can use.</p>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://ricardoanderegg.com//tags/problem/">problem</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/solving/">solving</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/abstraction/">abstraction</a>&nbsp;
+            
+              <a href="https://ricardoanderegg.com//tags/thinking/">thinking</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fricardoanderegg.com%2fposts%2fdivide_search_abstract%2f&amp;text=Divide%20%e2%9e%97%20Search%20%f0%9f%94%8d%20Abstract%20%f0%9f%94%ad&amp;via=ricardoanderegg" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fricardoanderegg.com%2fposts%2fdivide_search_abstract%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fricardoanderegg.com%2fposts%2fdivide_search_abstract%2f&amp;title=Divide%20%e2%9e%97%20Search%20%f0%9f%94%8d%20Abstract%20%f0%9f%94%ad" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fricardoanderegg.com%2fposts%2fdivide_search_abstract%2f&amp;title=Divide%20%e2%9e%97%20Search%20%f0%9f%94%8d%20Abstract%20%f0%9f%94%ad" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fricardoanderegg.com%2fposts%2fdivide_search_abstract%2f&amp;title=Divide%20%e2%9e%97%20Search%20%f0%9f%94%8d%20Abstract%20%f0%9f%94%ad" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fricardoanderegg.com%2fposts%2fdivide_search_abstract%2f&amp;description=Divide%20%e2%9e%97%20Search%20%f0%9f%94%8d%20Abstract%20%f0%9f%94%ad" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://ricardoanderegg.com/posts/langid_fasttext/" data-toggle="tooltip" data-placement="top" title="Language identification with fastText">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://ricardoanderegg.com/posts/fixing_ghcup_bug/" data-toggle="tooltip" data-placement="top" title="Fixing a bug in the Haskell installer">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+          
+          <div class="disqus-comments">
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rand-netlify" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+          </div>
+          
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:ricardo.anderegg@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/polyrand" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://gitlab.com/polyrand" title="GitLab">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-gitlab fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/ricardoanderegg" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/ricardoanderegg" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://telegram.me/rick_dolphin" title="Telegram">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              <a href="ricardoanderegg.com">Ricardo Ander-Egg</a>
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://ricardoanderegg.com/">rand[om]</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.65.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ricardoanderegg.com/js/main.js"></script>
+<script src="https://ricardoanderegg.com/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://ricardoanderegg.com/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+

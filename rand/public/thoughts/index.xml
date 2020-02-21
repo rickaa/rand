@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thoughts on rand[om]</title>
+    <link>https://ricardoanderegg.com/thoughts/</link>
+    <description>Recent content in Thoughts on rand[om]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</managingEditor>
+    <webMaster>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</webMaster>
+    <lastBuildDate>Fri, 07 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ricardoanderegg.com/thoughts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Education before innovation</title>
+      <link>https://ricardoanderegg.com/thoughts/education_before_innovation/</link>
+      <pubDate>Fri, 07 Feb 2020 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/thoughts/education_before_innovation/</guid>
+      <description>&lt;p&gt;We live in a fast changing world, everyone seems to be working on the next big thing while you still haven&amp;rsquo;t got used to the previous big thing. We look at technology, science and innovation as our new saving god, while overlooking something more fundamental: education.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Thinking about thinking</title>
+      <link>https://ricardoanderegg.com/thoughts/test/</link>
+      <pubDate>Tue, 04 Feb 2020 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/thoughts/test/</guid>
+      <description>&lt;p&gt;Work in progress&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

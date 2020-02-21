@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on rand[om]</title>
+    <link>https://ricardoanderegg.com/posts/</link>
+    <description>Recent content in Posts on rand[om]</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</managingEditor>
+    <webMaster>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</webMaster>
+    <lastBuildDate>Fri, 21 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ricardoanderegg.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conda management</title>
+      <link>https://ricardoanderegg.com/posts/conda_management/</link>
+      <pubDate>Fri, 21 Feb 2020 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/posts/conda_management/</guid>
+      <description>&lt;p&gt;Manage conda environments and Jupyterlab easily.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fixing a bug in the Haskell installer</title>
+      <link>https://ricardoanderegg.com/posts/fixing_ghcup_bug/</link>
+      <pubDate>Thu, 16 Jan 2020 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/posts/fixing_ghcup_bug/</guid>
+      <description>&lt;p&gt;The story of a bug fix. I found a bug in the default Haskell installer &lt;a href=&#34;https://gitlab.haskell.org/haskell/ghcup&#34;&gt;ghcup&lt;/a&gt;, fixed it in my computer and had the fix merged to the public installer.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Divide ➗ Search 🔍 Abstract 🔭</title>
+      <link>https://ricardoanderegg.com/posts/divide_search_abstract/</link>
+      <pubDate>Thu, 28 Nov 2019 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/posts/divide_search_abstract/</guid>
+      <description>&lt;p&gt;Some problems are harder than others, but having a system to approach them makes a big difference.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Language identification with fastText</title>
+      <link>https://ricardoanderegg.com/posts/langid_fasttext/</link>
+      <pubDate>Tue, 20 Aug 2019 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/posts/langid_fasttext/</guid>
+      <description>&lt;p&gt;When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I&amp;rsquo;ll show a way to do a fast ⚡️ and reliable ✨ languague identification with &lt;a href=&#34;https://fasttext.cc&#34;&gt;fasttext&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linking notebooks</title>
+      <link>https://ricardoanderegg.com/posts/notebook_linking/</link>
+      <pubDate>Thu, 25 Jul 2019 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/posts/notebook_linking/</guid>
+      <description>&lt;p&gt;There is a little trick I just found about, which I think can be very useful when you split tasks across different notebooks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Black ❤ Jupyter</title>
+      <link>https://ricardoanderegg.com/posts/black_jupyter/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      <author>ricardo.anderegg@gmail.com (Ricardo Ander-Egg)</author>
+      <guid>https://ricardoanderegg.com/posts/black_jupyter/</guid>
+      <description>&lt;p&gt;After nearly a year coding in Python (although not consistently), I started trying code formatters and discovered they were more useful than I thought. Here are some reason why.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
