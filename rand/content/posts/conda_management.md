@@ -26,7 +26,7 @@ conda create --name "$NAME" python="$VERSION"
 With that we create a new conda environment with the name we want and a Python version, in my case I execute the script like: `./condacreate_dev.sh dev 3.7` and it creates an environment called "dev" using Python 3.7.
 
 ```sh
-conda install -y --name "$NAME" -c conda-forge ipython jupyterlab nb_conda_kernels
+conda install -y --name "$NAME" -c conda-forge ipython jupyterlab nb_conda_kernels black
 ```
 
 Now we install the python packages I mentioned before. Using the flag `-y` we accept the installation by default so we don't need to interact with our terminal the flag `--name` lets you execute the command in the environment with that name (in this case it's "dev").
@@ -40,7 +40,7 @@ conda run -n "$NAME" jupyter labextension install @jupyter-widgets/jupyterlab-ma
 conda run -n "$NAME" jupyter labextension install @ryantam626/jupyterlab_code_formatter --no-build
 ```
 
-`conda run` executes a command, `-n` is the same as `--name`, the tag `--no-build` tells Jupyterlab to **not** rebuild itself after installing every extensions. Before knowing that tag existed I spent quite a lot of time creating new environments.
+`conda run` executes a command, `-n` is the same as `--name`, the tag `--no-build` tells Jupyterlab to **not** rebuild itself after installing every extension. Before knowing that tag existed I spent quite a lot of time creating new environments.
 
 ```sh
 conda install -y --name "$NAME" -c conda-forge jupyterlab-git
