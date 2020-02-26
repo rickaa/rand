@@ -4,7 +4,7 @@ date = "2020-02-07"
 author = "Ricardo"
 categories = ["thoughts", "innovation"]
 tags = ["thoughts", "innovation", "education"]
-thumbnail: "img/social/education_innovation.jpg"
+thumbnail = "img/social/education_innovation.jpg"
 +++
 
 We live in a fast changing world, everyone seems to be working on the next big thing while you still haven't got used to the previous big thing. We look at technology, science and innovation as our new saving god, while overlooking something more fundamental: education.
