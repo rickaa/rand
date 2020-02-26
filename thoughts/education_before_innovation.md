@@ -1,7 +1,7 @@
 +++
-title = "Education before innovation"  
-date = "2020-02-07"  
-author = "Ricardo"  
+title = "Education before innovation"
+date = "2020-02-07"
+author = "Ricardo"
 categories = ["thoughts", "innovation"]
 tags = ["thoughts", "innovation", "education"]
 thumbnail: "img/social/education_innovation.jpg"
