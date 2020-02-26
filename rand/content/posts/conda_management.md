@@ -4,7 +4,7 @@ date = "2020-02-21"
 author = "Ricardo"
 categories = ["conda", "environments"]
 tags = ["conda", "environment", "python"]
-thumbnail = "img/conda_management.jpg"
+thumbnail = "img/social/conda_management.jpg"
 +++
 
 
