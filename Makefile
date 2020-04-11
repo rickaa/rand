@@ -16,7 +16,7 @@ build:
 .PHONY: build
 
 comp:
-> find rand/static/img/social \
+> find rand/static/img/ \
 > \( -name '*.png' -o -name '*.jpg' -o -name '*.jpeg' \) -print0 \
 > | xargs -0 -P8 -n2 \
 > mogrify -strip \
