@@ -47,6 +47,18 @@ HUGO_ENABLEGITINFO = "true"
   status = 301
   force = true
 
+[[redirects]]
+  from = "https://rand.netlify.com/*"
+  to = "https://ricardoanderegg.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://rand.netlify.app/*"
+  to = "https://ricardoanderegg.com/:splat"
+  status = 301
+  force = true  
+
 # [[redirects]]
 #   from = "/post/*"
 #   to = "/posts/:splat"
