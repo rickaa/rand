@@ -2,10 +2,10 @@
 
 # more specific aalways above!
 # Old posts
-rand.netlify.com/post/*  ricardoanderegg.com/posts/:splat  301!
-ricardoandergg.com/post/*  ricardoanderegg.com/posts/:splat  301!
+https://rand.netlify.app/post/*  https://ricardoanderegg.com/posts/:splat  301!
+https://ricardoandergg.app/post/*  https://ricardoanderegg.com/posts/:splat  301!
 
 # SEO
 # Redirect default Netlify subdomain to primary domain
-rand.netlify.com/* ricardoanderegg.com/:splat 301!
+https://rand.netlify.app/* https://ricardoanderegg.com/:splat 301!
 
