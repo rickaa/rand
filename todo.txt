@@ -1,3 +1,5 @@
+redo all css for tailwind (change class names -> tailwind)
+
 remove day from single.html and leave only month/year but put it below the title
 
 list does now show well in /posts
@@ -10,3 +12,5 @@ https://gohugo.io/templates/homepage/
 https://github.com/budparr/hugopipes-tailwindcss
 
 https://github.com/knadh/hugo-ink/blob/master/exampleSite/config.toml
+
+

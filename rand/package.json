@@ -1,0 +1,29 @@
+{
+  "name": "rand",
+  "version": "1.0.0",
+  "description": "my website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polyrand/rand.git"
+  },
+  "author": "ricardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/polyrand/rand/issues"
+  },
+  "homepage": "https://github.com/polyrand/rand#readme",
+  "dependencies": {
+    "tailwindcss": "^1.4.6"
+  },
+  "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^2.2.0",
+    "autoprefixer": "^9.7.6",
+    "postcss-cli": "^7.1.1",
+    "postcss-import": "^12.0.1",
+    "purgecss": "^2.2.1"
+  }
+}

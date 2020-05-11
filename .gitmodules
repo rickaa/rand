@@ -16,3 +16,6 @@
 [submodule "rand/themes/hugo-ink"]
 	path = rand/themes/hugo-ink
 	url = https://github.com/polyrand/hugo-ink.git
+[submodule "rand/themes/hugopipes-tailwindcss"]
+	path = rand/themes/hugopipes-tailwindcss
+	url = https://github.com/budparr/hugopipes-tailwindcss.git
