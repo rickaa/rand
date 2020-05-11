@@ -1,49 +1,28 @@
 baseurl = "https://ricardoanderegg.com/"
 DefaultContentLanguage = "en"
-#DefaultContentLanguage = "ja"
 title = "rand[om]"
-theme = "beautifulhugo"
+theme = "hugo-ink"
 metaDataFormat = "yaml"
-pygmentsStyle = "trac"
-pygmentsUseClasses = true
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
-#pygmentsUseClassic = true
-#pygmentOptions = "linenos=inline"
-disqusShortname = "rand-netlify"
-#googleAnalytics = "XXX"
-# enableEmoji = true
-# enableGitInfo = false
+pygmentsstyle = "default"
+# pygmentsUseClasses = true
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
 
-
-[Params]
-  homeTitle = "Ricardo" # Set a different text for the header on the home page
-  subtitle = "👨🏻‍⚕️ Medicine ∩ Machine Learning 🤖"
-  # mainSections = "main"
-  logo = "img/bike.jpeg"
-  favicon = "img/favicon.ico"
+[params]
+  title = "rand[om]"
+  subtitle = "med ∩ ml"
+  avatar = "https://ricardoanderegg.com/img/bike.jpg"
+  favicon = true
   dateFormat = "January 2, 2006"
-  # commit = false
+  featherIconsCDN = true
+  mode = "auto"
   rss = true
-  comments = true
-  readingTime = true
-  useHLJS = true
-  socialShare = true
-  hideAuthor = true
-  # commit = "https://https://github.com/polyrand/rand/tree/"
-#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
 
-#[[Params.bigimg]]
-#  src = "img/triangle.jpg"
-#  desc = "Triangle"
-#[[Params.bigimg]]
-#  src = "img/sphere.jpg"
-#  desc = "Sphere"
-#  # position: see values of CSS background-position.
-#  position = "center top"
-#[[Params.bigimg]]
-#  src = "img/hexagon.jpg"
-#  desc = "Hexagon"
+  # favicon = "img/favicon.ico"
+  # readingTime = true
+  # useHLJS = true
+  # social = true
+  # hideAuthor = true
 
 [Author]
   name = "Ricardo Ander-Egg"
@@ -54,65 +33,53 @@ disqusShortname = "rand-netlify"
   twitter = "ricardoanderegg"
   linkedin = "ricardoanderegg"
   telegram = "rick_dolphin"
-  # bitbucket = "username"
-  # reddit = "username"
-  # facebook = "username"
-  # googleplus = "+username" # or xxxxxxxxxxxxxxxxxxxxx
-  # xing = "username"
-  # stackoverflow = "users/XXXXXXX/username"
-  # snapchat = "username"
-  # instagram = "username"
-  # youtube = "user/username" # or channel/channelname
-  # soundcloud = "username"
-  # spotify = "username"
-  # bandcamp = "username"
-  # itchio = "username"
-  # vk = "username"
-  # paypal = "username"
 
 [[menu.main]]
     name = "Blog"
-    url = "posts"
+    url = "/posts"
     weight = 1
 
 [[menu.main]]
     name = "Thoughts"
-    url = "thoughts"
+    url = "/thoughts"
     weight = 2
 
 [[menu.main]]
     name = "About"
-    url = "page/about"
+    url = "/page/about"
     weight = 3
 
 [taxonomies]
-  category = "categories"
-  # tag = "tags"
+  # category = "categories"
+  tag = "tags"
 
-# [[menu.main]]
-#     identifier = "samples"
-#     name = "Samples"
-#     weight = 2
 
-# [[menu.main]]
-#     parent = "samples"
-#     name = "Big Image Sample"
-#     url = "post/2017-03-07-bigimg-sample"
-#     weight = 1
+[[params.social]]
+  name = "Github"
+  icon = "github"
+  url = "https://github.com/polyrand"
 
-# [[menu.main]]
-#     parent = "samples"
-#     name = "Math Sample"
-#     url = "post/2017-03-05-math-sample"
-#     weight = 2
+[[params.social]]
+  name = "LinkedIn"
+  icon = "linkedin"
+  url = "https://www.linkedin.com/in/ricardoanderegg/"
 
-# [[menu.main]]
-#     parent = "samples"
-#     name = "Code Sample"
-#     url = "post/2016-03-08-code-sample"
-#     weight = 3
+[[params.social]]
+  name = "Twitter"
+  icon = "twitter"
+  url = "https://twitter.com/ricardoanderegg"
 
-# [[menu.main]]
-#     name = "Tags"
-#     url = "tags"
-#     weight = 3
+[[params.social]]
+  name = "Telegram"
+  icon = "send"
+  url = "https://t.me/polyrand"
+
+[[params.social]]
+  name = "Mail"
+  icon = "mail"
+  url = "mailto:ricardo.anderegg@gmail.com"
+
+[[params.social]]
+  name = "RSS"
+  icon = "rss"
+  url = "/index.xml"

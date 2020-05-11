@@ -1,8 +1,6 @@
 ---
-layout: single
-title: Ricardo
-subtitle: 👨🏻‍⚕️ Medicine ∩ Machine Learning 🤖
-use-site-title: true
+title: Home
+subtitle: subtitle
 ---
 
 Hello there! I'm Ricardo, currently a medicine student student at [Universitat de Barcelona](http://www.ub.edu/medicina/es/) also working on machine learning and software engineering projects.
