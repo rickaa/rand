@@ -1,15 +1,25 @@
 <!DOCTYPE html>
+<html {{- if (eq .Site.Params.mode "dark") -}}class="dark"{{ end }}>
 {{ partial "header.html" . }}
 <body>
-	<div class="p-1 my-2 sm:my-1">
+	<div class="container wrapper">
 		{{ partial "head.html" . }}
 
 		<div class="post">
-			<div class="post-headersingle">
+			<!-- <div class="post-header">
+				{{ if ne .Date.Year 1 }}
+					<div class="meta">
+						<div class="date">
+							<span class="day">{{ dateFormat "02" .Date }}</span>
+							<span class="rest">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+						</div>
+					</div>
+				{{ end }}
 				<div class="matter">
 					<h1 class="title">{{ .Title }}</h1>
 				</div>
-			</div>
+			</div> -->
+					
 			<div class="markdown">
 				{{ .Content }}
 			</div>

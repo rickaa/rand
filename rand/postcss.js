@@ -4,15 +4,15 @@ class TailwindExtractor {
 	}
 }
 
-module.exports = {
-  plugins: [
+module.exports = {    
+  plugins: [        
     require('postcss-import')({
-      path: ["static/css"],
-    }),
-    require('tailwindcss')('./static/css/tailwind.js'),
+      path: ["assets/css"],
+    }), 
+    require('tailwindcss')('./assets/css/tailwind.js'),    
     require('autoprefixer')({
       grid: true,
       browsers: ['>1%']
-    }),
+    }),    
   ]
 }

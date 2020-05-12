@@ -1,19 +1,21 @@
 baseurl = "https://ricardoanderegg.com/"
-DefaultContentLanguage = "en"
+languageCode = "en-US"
 title = "rand[om]"
-metaDataFormat = "yaml"
-pygmentsstyle = "default"
+
+
+pygmentsstyle = "vs"
 # pygmentsUseClasses = true
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
-  title = "rand[om]"
+  # title = "rand[om]"
   subtitle = "med ∩ ml"
-  avatar = "https://ricardoanderegg.com/img/bike.jpg"
+  subsubtitle = ""
+  avatar = "/img/bike_pixel.png"
   favicon = true
   dateFormat = "January 2, 2006"
-  featherIconsCDN = true
+  featherIconsCDN = false
   mode = "auto"
   rss = true
 
@@ -33,20 +35,30 @@ pygmentscodefencesguesssyntax = true
   linkedin = "ricardoanderegg"
   telegram = "rick_dolphin"
 
+# [[menu.main]]
+#     name = "Home"
+#     url = "/"
+#     weight = 1
+
 [[menu.main]]
     name = "Blog"
     url = "/posts"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     name = "Thoughts"
     url = "/thoughts"
-    weight = 2
+    weight = 3
+    
+[[menu.main]]
+    name = "Cooking"
+    url = "/cook"
+    weight = 4
 
 [[menu.main]]
     name = "About"
-    url = "/page/about"
-    weight = 3
+    url = "/about"
+    weight = 5
 
 [taxonomies]
   # category = "categories"
@@ -68,17 +80,17 @@ pygmentscodefencesguesssyntax = true
   icon = "twitter"
   url = "https://twitter.com/ricardoanderegg"
 
-[[params.social]]
-  name = "Telegram"
-  icon = "send"
-  url = "https://t.me/polyrand"
+# [[params.social]]
+#   name = "Telegram"
+#   icon = "send"
+#   url = "https://t.me/polyrand"
 
 [[params.social]]
   name = "Mail"
   icon = "mail"
   url = "mailto:ricardo.anderegg@gmail.com"
 
-[[params.social]]
-  name = "RSS"
-  icon = "rss"
-  url = "/index.xml"
+# [[params.social]]
+#   name = "RSS"
+#   icon = "rss"
+#   url = "/index.xml"

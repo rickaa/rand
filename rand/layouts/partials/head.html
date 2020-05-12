@@ -1,18 +1,18 @@
-<div class="pl-8 mt-8 mb-8 header">
+<div class="border-2 border-red-600 header">
 	{{ if .Site.Params.Avatar }}
-		<div class="avatar">
+		<div class="border-2 border-gray-600 avatar">
 			<a href="{{ .Site.BaseURL }}">
 				<img src="{{ .Site.Params.Avatar }}" alt="{{ .Site.Title }}" />
 			</a>
 		</div>
 	{{ end }}
 	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-	<div class="site-description">
+	<div class="flex items-center border-2 border-yellow-600 site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
 		{{- end -}}
 		<nav class="nav social">
-			<ul class="flat">
+			<ul class="hidden border-2 border-indigo-700 sm:flex flat">
 				{{- range $index, $key := .Site.Params.Social -}}
 					<li><a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a></li>
 				{{- end -}}
@@ -23,7 +23,7 @@
                 {{- end -}}
 	</div>
 
-	<nav class="nav">
+	<nav class="border-2 border-blue-600 nav">
 		<ul class="flat">
 			{{ range .Site.Menus.main }}
 			<li>

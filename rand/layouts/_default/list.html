@@ -16,30 +16,18 @@
 			{{- range .Data.Pages -}}
 			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
 			{{- else -}}
-			<li class="mt-8 mb-2">
-				<div class="post-header">
-					<div class="meta">
-						<div class="date">
-							<span class="day">{{ dateFormat "02" .Date }}</span>
-							<span class="rest">{{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+			<li class="post">
+					<div class="flex items-center mb-6 text-xs">
+						<div>  <!--- aqui iba un class=meta --->
+							<div class="w-20 date"> <!--- abajo iba un class=rest --->
+								<span>{{ dateFormat "02" .Date }}, {{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
+							</div>
 						</div>
+						 <!--- abajo iba un class=matter<div></div> --->
+							<h4 class="title small">
+								<a href="{{ .RelPermalink }}">{{.Title}}</a>
+							</h4>
 					</div>
-					<div class="matter">
-						<h4 class="title small">
-							<a href="{{ .RelPermalink }}">{{.Title}}{{ if .Draft }}<sup class="draft-label">DRAFT</sup>{{ end }}</a>
-						</h4>
-						<!-- set description as param in front matter -->
-						<!-- <span class="description">
-							{{ if isset .Params "description" }}
-								{{ .Description }}
-							{{ else if gt (len .RawContent) 120 }}
-								{{ slicestr .RawContent 0 120 }}...
-							{{ else }}
-								{{ .RawContent }}
-							{{ end }}
-						</span> -->
-					</div>
-				</div>
 			</li>
 			{{- end -}}
 			{{- end -}}
