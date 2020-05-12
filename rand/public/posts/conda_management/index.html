@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Conda management - rand[om]</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest"><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Conda management">
+<meta itemprop="description" content="Manage conda environments and Jupyterlab easily.">
+<meta itemprop="datePublished" content="2020-02-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="706">
+
+
+
+<meta itemprop="keywords" content="conda,environment,python," /><meta property="og:title" content="Conda management" />
+<meta property="og:description" content="Manage conda environments and Jupyterlab easily." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ricardoanderegg.com/posts/conda_management/" />
+<meta property="article:published_time" content="2020-02-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-21T00:00:00+00:00" /><meta property="og:site_name" content="rand[om]" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Conda management"/>
+<meta name="twitter:description" content="Manage conda environments and Jupyterlab easily."/>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ricardoanderegg.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ricardoanderegg.com/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://ricardoanderegg.com/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://ricardoanderegg.com/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://ricardoanderegg.com/">
+				<img src="https://ricardoanderegg.com/img/bike.jpg" alt="rand[om]" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://ricardoanderegg.com/">rand[om]</a></h1>
+	<div class="site-description"><p>med ∩ ml</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/polyrand" title="Github"><i data-feather="github"></i></a></li><li><a href="https://www.linkedin.com/in/ricardoanderegg/" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://twitter.com/ricardoanderegg" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://t.me/polyrand" title="Telegram"><i data-feather="send"></i></a></li><li><a href="mailto:ricardo.anderegg@gmail.com" title="Mail"><i data-feather="mail"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav><span class="scheme-toggle"><a href="#" id="scheme-toggle"></a></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/posts">Blog</a>
+			</li>
+			
+			<li>
+				<a href="/thoughts">Thoughts</a>
+			</li>
+			
+			<li>
+				<a href="/page/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-headersingle">
+				<div class="matter">
+					<h1 class="title">Conda management</h1>
+				</div>
+				
+					<div class="meta">
+						<div class="date">
+							
+							<span class="restpost">Feb 2020</span>
+						</div>
+					</div>
+				
+			</div>
+					
+			<div class="markdown">
+				<p>Manage conda environments and Jupyterlab easily.</p>
+<p><strong>TL;DR</strong> Use <a href="https://github.com/polyrand/scripts/blob/master/condacreate_dev.sh">this</a> script to create a base conda environment with Jupyterlab and some plugins, and <a href="https://github.com/polyrand/scripts/blob/master/condacreate.sh">this</a> to create new environments and make them available when launching Jupyter.</p>
+<p>Managin environments in Python can be tricky. I used to have a default script to create a conda environment, in that script I would install al the packages I consider basic, plus Jupyterlab and some plugins. Yes a new fresh Jupyterlab+plugins for every environment.</p>
+<p>A few days ago I read <a href="https://twitter.com/vboykis/status/1229813718776786944">this tweet by Vicki Boykis</a> and <a href="https://twitter.com/pmbaumgartner/status/1229880784342917122">one of the answers from Peter Baumgartner</a> and decided to change my workflow a little bit. Now I use the 2 scripts I linked above, and I will go through explaining what they do. Hopefully you can also learn a bit about conda too.</p>
+<p><a href="https://github.com/polyrand/scripts/blob/master/condacreate_dev.sh">condacreate_dev.sh</a>: this first one is used to create a base environment that will hold jupyterlab, and the package <a href="https://github.com/Anaconda-Platform/nb_conda_kernels">nb_conda_kernels</a> which <em>enables a Jupyter Notebook or JupyterLab application in one conda environment to access kernels for Python, R, and other languages found in other environments</em>.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create --name <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> python=<span style="color:#0ff;font-weight:bold">&#34;</span>$VERSION<span style="color:#0ff;font-weight:bold">&#34;</span>
+</code></pre></div><p>With that we create a new conda environment with the name we want and a Python version, in my case I execute the script like: <code>./condacreate_dev.sh dev 3.7</code> and it creates an environment called &ldquo;dev&rdquo; using Python 3.7.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">conda install -y --name <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> -c conda-forge ipython jupyterlab nb_conda_kernels black
+</code></pre></div><p>Now we install the python packages I mentioned before. Using the flag <code>-y</code> we accept the installation by default so we don&rsquo;t need to interact with our terminal the flag <code>--name</code> lets you execute the command in the environment with that name (in this case it&rsquo;s &ldquo;dev&rdquo;).</p>
+<p>Then I install the extensions I use:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">conda run -n <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> jupyter labextension install @jupyterlab/toc --no-build
+conda run -n <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> jupyter labextension install @jupyterlab/celltags --no-build
+conda run -n <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> jupyter labextension install @jupyter-widgets/jupyterlab-manager --no-build
+conda run -n <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> jupyter labextension install @ryantam626/jupyterlab_code_formatter --no-build
+</code></pre></div><p><code>conda run</code> executes a command, <code>-n</code> is the same as <code>--name</code>, the tag <code>--no-build</code> tells Jupyterlab to <strong>not</strong> rebuild itself after installing every extension. Before knowing that tag existed I spent quite a lot of time creating new environments.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">conda install -y --name <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> -c conda-forge jupyterlab-git
+conda install -y --name <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> -c conda-forge jupyterlab_code_formatter
+conda run -n <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> jupyter serverextension <span style="color:#fff;font-weight:bold">enable</span> --py jupyterlab_code_formatter
+conda run -n <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> jupyter lab build
+</code></pre></div><p>Finally I install some more extensions and I rebuild Jupyterlab with the last command.</p>
+<p>The last lines:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#fff;font-weight:bold">if</span> [[ $3 == <span style="color:#0ff;font-weight:bold">&#39;alias&#39;</span> ]]; <span style="color:#fff;font-weight:bold">then</span>
+    <span style="color:#fff;font-weight:bold">echo</span> <span style="color:#0ff;font-weight:bold">&#34;alias </span>$NAME<span style="color:#0ff;font-weight:bold">=&#39;conda activate </span>$NAME<span style="color:#0ff;font-weight:bold">&#39;&#34;</span> &gt;&gt; ~/dotfiles/.condalias
+<span style="color:#fff;font-weight:bold">fi</span>
+</code></pre></div><p>With those I can create an alias with the same name of the environment to activate it, so if my initial command was <code>./condacreate_dev.sh dev 3.7 alias</code> it would have create an alias so that by running the command <code>dev</code> in my terminal would activate that environment.</p>
+<p><a href="https://github.com/polyrand/scripts/blob/master/condacreate.sh">condacreate.sh</a>: the second one creates an environment with the base packages I use. At the end we run:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">conda run -n <span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span> ipython kernel install --user --name=<span style="color:#0ff;font-weight:bold">&#34;</span>$NAME<span style="color:#0ff;font-weight:bold">&#34;</span>
+</code></pre></div><p>And with that we register the environment to be used every time I run Jupyter.</p>
+<p>Apart from that, I use a couple of bash aliases tha simplify the workflow a lot:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#fff;font-weight:bold">alias</span> createpy=<span style="color:#0ff;font-weight:bold">&#39;bash ~/Projects/scripts/condacreate.sh&#39;</span>
+<span style="color:#fff;font-weight:bold">alias</span> createdev=<span style="color:#0ff;font-weight:bold">&#39;bash ~/Projects/scripts/condacreate_dev.sh&#39;</span>
+
+<span style="color:#fff;font-weight:bold">alias</span> lab=<span style="color:#0ff;font-weight:bold">&#39;conda run -n dev jupyter lab&#39;</span>
+<span style="color:#fff;font-weight:bold">alias</span> blab=<span style="color:#0ff;font-weight:bold">&#39;nohup conda run -n dev jupyter lab --browser firefox &amp;&gt;/dev/null &amp;&#39;</span>
+</code></pre></div><p>The first two are for creating the environments, the other are for running Jupyterlab from the base environment (called &ldquo;dev&rdquo;). The most special one is the last one, which runs Jupyterlab in the background so that it does not die if you mistakenly close the terminal.</p>
+<p>My final workflow would be:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#007f7f"># create base env</span>
+createdev dev 3.7
+
+<span style="color:#007f7f"># create env for nlp and make an alias called &#34;nlp&#34; to activate it</span>
+createpy nlp 3.7 <span style="color:#fff;font-weight:bold">alias</span>
+
+<span style="color:#007f7f"># activate that env</span>
+nlp
+
+<span style="color:#007f7f"># and install whatever I need</span>
+conda install -c conda-forge spacy gensim 
+
+<span style="color:#007f7f"># deactivate the environment</span>
+conda deactivate
+</code></pre></div><p>And now from anywhere I can run <code>blab</code> to run Jupyterlab and create a new notebook using the environment called &ldquo;nlp&rdquo;.</p>
+<p>Lastly, you can run <code>jupyter kernelspec list</code> with the &ldquo;dev&rdquo; environment activated to list the registered kernels and <code>jupyter kernelspec uninstall &lt;name&gt;</code> to remove the kernel called <code>&lt;name&gt;</code>.</p>
+<p>References:</p>
+<ul>
+<li><a href="http://veekaybee.github.io/2020/02/18/running-jupyter-in-venv/">http://veekaybee.github.io/2020/02/18/running-jupyter-in-venv/</a></li>
+<li><a href="https://twitter.com/pmbaumgartner/status/1229880784342917122">https://twitter.com/pmbaumgartner/status/1229880784342917122</a></li>
+</ul>
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li>
+								<a href="/tags/conda">conda</a>
+							</li>
+							
+							<li>
+								<a href="/tags/environment">environment</a>
+							</li>
+							
+							<li>
+								<a href="/tags/python">python</a>
+							</li>
+							
+						</ul>
+					
+				
+			</div>
+
+			
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2020  <a href="https://github.com/polyrand/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>

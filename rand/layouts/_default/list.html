@@ -16,7 +16,7 @@
 			{{- range .Data.Pages -}}
 			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
 			{{- else -}}
-			<li class="post">
+			<li class="mt-8 mb-2">
 				<div class="post-header">
 					<div class="meta">
 						<div class="date">
@@ -41,7 +41,7 @@
 					</div>
 				</div>
 			</li>
-			<!-- {{- end -}}-->
+			{{- end -}}
 			{{- end -}}
 		</ul>
 	</div>

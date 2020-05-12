@@ -1,7 +1,6 @@
 baseurl = "https://ricardoanderegg.com/"
 DefaultContentLanguage = "en"
 title = "rand[om]"
-theme = "hugo-ink"
 metaDataFormat = "yaml"
 pygmentsstyle = "default"
 # pygmentsUseClasses = true

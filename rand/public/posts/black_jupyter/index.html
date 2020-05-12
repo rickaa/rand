@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Black ❤ Jupyter - rand[om]</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+		<link rel="manifest" href="/site.webmanifest"><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="Black ❤ Jupyter">
+<meta itemprop="description" content="After nearly a year coding in Python (although not consistently), I started trying code formatters and discovered they were more useful than I thought. Here are some reason why.">
+<meta itemprop="datePublished" content="2019-07-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-07-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1569">
+
+
+
+<meta itemprop="keywords" content="pandas,formatting,black,code,comprehension,list," /><meta property="og:title" content="Black ❤ Jupyter" />
+<meta property="og:description" content="After nearly a year coding in Python (although not consistently), I started trying code formatters and discovered they were more useful than I thought. Here are some reason why." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ricardoanderegg.com/posts/black_jupyter/" />
+<meta property="article:published_time" content="2019-07-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-07-22T00:00:00+00:00" /><meta property="og:site_name" content="rand[om]" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Black ❤ Jupyter"/>
+<meta name="twitter:description" content="After nearly a year coding in Python (although not consistently), I started trying code formatters and discovered they were more useful than I thought. Here are some reason why."/>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ricardoanderegg.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ricardoanderegg.com/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://ricardoanderegg.com/css/dark.css" />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+		<script src="https://ricardoanderegg.com/js/main.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper">
+		<div class="header">
+	
+		<div class="avatar">
+			<a href="https://ricardoanderegg.com/">
+				<img src="https://ricardoanderegg.com/img/bike.jpg" alt="rand[om]" />
+			</a>
+		</div>
+	
+	<h1 class="site-title"><a href="https://ricardoanderegg.com/">rand[om]</a></h1>
+	<div class="site-description"><p>med ∩ ml</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/polyrand" title="Github"><i data-feather="github"></i></a></li><li><a href="https://www.linkedin.com/in/ricardoanderegg/" title="LinkedIn"><i data-feather="linkedin"></i></a></li><li><a href="https://twitter.com/ricardoanderegg" title="Twitter"><i data-feather="twitter"></i></a></li><li><a href="https://t.me/polyrand" title="Telegram"><i data-feather="send"></i></a></li><li><a href="mailto:ricardo.anderegg@gmail.com" title="Mail"><i data-feather="mail"></i></a></li><li><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></li></ul>
+		</nav><span class="scheme-toggle"><a href="#" id="scheme-toggle"></a></div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/posts">Blog</a>
+			</li>
+			
+			<li>
+				<a href="/thoughts">Thoughts</a>
+			</li>
+			
+			<li>
+				<a href="/page/about">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+			<div class="post-headersingle">
+				<div class="matter">
+					<h1 class="title">Black ❤ Jupyter</h1>
+				</div>
+				
+					<div class="meta">
+						<div class="date">
+							
+							<span class="restpost">Jul 2019</span>
+						</div>
+					</div>
+				
+			</div>
+					
+			<div class="markdown">
+				<p>After nearly a year coding in Python (although not consistently), I started trying code formatters and discovered they were more useful than I thought. Here are some reason why.</p>
+<p>First of all I must admit these tips may be biased by the fact I use <a href="https://jupyterlab.readthedocs.io/en/stable/">Jupyter Notebooks</a> quite a lot. I think they are an incredible tool for learning although they may also instill some bad coding habits.</p>
+<p>Before talking about <a href="https://github.com/psf/black">black</a> lets go through the step to install it and use it with Jupyter Notebooks.</p>
+<h2 id="installing-black-and-using-it-with-jupyter">Installing black and using it with Jupyter</h2>
+<p>Luckily for us, there is a Jupyterlab <a href="https://github.com/ryantam626/jupyterlab_code_formatter">extension</a> for code formatting. To get started you only need 4 commands if you are using <strong>conda</strong>:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda install -c conda-forge black
+jupyter labextension install @ryantam626/jupyterlab_code_formatter
+conda install -c conda-forge jupyterlab_code_formatter
+jupyter serverextension <span style="color:#fff;font-weight:bold">enable</span> --py jupyterlab_code_formatter
+</code></pre></div><p>If you are using <strong>pip</strong> you need to install the one of the supported formatters (black in this case) and then do:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">jupyter labextension install @ryantam626/jupyterlab_code_formatter
+pip install jupyterlab_code_formatter
+jupyter serverextension <span style="color:#fff;font-weight:bold">enable</span> --py jupyterlab_code_formatter
+</code></pre></div><p>Finally, what really helps me using black continuously, is having a handy shortcut to run it in the current cell. In my case I use <strong>ctrl + k</strong>, you can add it to your jupyterlab shortcuts pasting the following in your shortcuts settings editor:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+
+    <span style="font-weight:bold">&#34;shortcuts&#34;</span>: [
+    {
+                <span style="font-weight:bold">&#34;command&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;jupyterlab_code_formatter:black&#34;</span>,
+                <span style="font-weight:bold">&#34;keys&#34;</span>: [
+                    <span style="color:#0ff;font-weight:bold">&#34;Ctrl K&#34;</span>
+                ],
+                <span style="font-weight:bold">&#34;selector&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;.jp-Notebook.jp-mod-editMode&#34;</span>
+            }
+        ]
+}
+</code></pre></div><p>Now lets go back to code ❗️</p>
+<h2 id="pandas-method-chaining">Pandas method chaining</h2>
+<p>I believe one of those bad habits that Jupyter creates is writing code that doesn&rsquo;t look very clean when used outside the notebook. One case can be when using <a href="https://tomaugspurger.github.io/method-chaining">method-chaining</a> in Pandas, which is the currently promoted style when cleaning data. Lets look at an example.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> read_messages(path):
+    df = (
+        pd.read_csv(
+            path,
+            delimiter=<span style="color:#0ff;font-weight:bold">&#34;;&#34;</span>,
+            dtype={<span style="color:#0ff;font-weight:bold">&#34;id&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;int&#34;</span>,
+                   <span style="color:#0ff;font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;category&#34;</span>,
+                   <span style="color:#0ff;font-weight:bold">&#34;title&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;str&#34;</span>,
+                   <span style="color:#0ff;font-weight:bold">&#34;text&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;str&#34;</span>})
+        .drop([<span style="color:#0ff;font-weight:bold">&#34;Unnamed: 0&#34;</span>], axis=<span style="color:#ff0;font-weight:bold">1</span>)
+        <span style="color:#007f7f"># dates</span>
+        .assign(date=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(x[<span style="color:#0ff;font-weight:bold">&#34;date&#34;</span>], format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold"> %H:%M:%S&#34;</span>),
+                date_start=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(x[<span style="color:#0ff;font-weight:bold">&#34;date_start&#34;</span>], format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold"> %H:%M:%S&#34;</span>),
+                date_end=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(x[<span style="color:#0ff;font-weight:bold">&#34;date_end&#34;</span>], format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold"> %H:%M:%S&#34;</span>))
+        <span style="color:#007f7f"># others</span>
+        .assign(txt_length=<span style="color:#fff;font-weight:bold">lambda</span> x: x.text.str.len(),
+                word_number=<span style="color:#fff;font-weight:bold">lambda</span> x: x.text.str.split().apply(<span style="color:#fff;font-weight:bold">len</span>),
+                date=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(x[<span style="color:#0ff;font-weight:bold">&#34;date&#34;</span>].apply(<span style="color:#fff;font-weight:bold">lambda</span> y: y.strftime(<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold">&#34;</span>)), format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold">&#34;</span>,),
+                hour=<span style="color:#fff;font-weight:bold">lambda</span> x: x[<span style="color:#0ff;font-weight:bold">&#34;date&#34;</span>].apply(<span style="color:#fff;font-weight:bold">lambda</span> y: y.hour)))
+
+    <span style="color:#fff;font-weight:bold">return</span> df
+</code></pre></div><p>That is probably the best we would do if we were writing code and experimenting with data cleaning functions. Even though it looks quite readable (I think when you get used to method chaining it gets a lot easier to read the code), there are a lot of parentheses, indents and long functions.</p>
+<p>This is how it looks when we apply <a href="https://github.com/python/black">black</a> to it.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> read_messages(path):
+    df = (
+        pd.read_csv(
+            path,
+            delimiter=<span style="color:#0ff;font-weight:bold">&#34;;&#34;</span>,
+            dtype={<span style="color:#0ff;font-weight:bold">&#34;id&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;int&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;type&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;category&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;title&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;str&#34;</span>, <span style="color:#0ff;font-weight:bold">&#34;text&#34;</span>: <span style="color:#0ff;font-weight:bold">&#34;str&#34;</span>},
+        )
+        .drop([<span style="color:#0ff;font-weight:bold">&#34;Unnamed: 0&#34;</span>], axis=<span style="color:#ff0;font-weight:bold">1</span>)
+        <span style="color:#007f7f"># dates</span>
+        .assign(
+            date=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(x[<span style="color:#0ff;font-weight:bold">&#34;date&#34;</span>], format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold"> %H:%M:%S&#34;</span>),
+            date_start=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(
+                x[<span style="color:#0ff;font-weight:bold">&#34;date_start&#34;</span>], format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold"> %H:%M:%S&#34;</span>
+            ),
+            date_end=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(
+                x[<span style="color:#0ff;font-weight:bold">&#34;date_end&#34;</span>], format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold"> %H:%M:%S&#34;</span>
+            ),
+        )
+        .assign(
+            txt_length=<span style="color:#fff;font-weight:bold">lambda</span> x: x.text.str.len(),
+            word_number=<span style="color:#fff;font-weight:bold">lambda</span> x: x.text.str.split().apply(<span style="color:#fff;font-weight:bold">len</span>),
+            date=<span style="color:#fff;font-weight:bold">lambda</span> x: pd.to_datetime(
+                x[<span style="color:#0ff;font-weight:bold">&#34;date&#34;</span>].apply(<span style="color:#fff;font-weight:bold">lambda</span> y: y.strftime(<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold">&#34;</span>)), format=<span style="color:#0ff;font-weight:bold">&#34;%Y-%m-</span><span style="color:#0ff;font-weight:bold">%d</span><span style="color:#0ff;font-weight:bold">&#34;</span>
+            ),
+            hour=<span style="color:#fff;font-weight:bold">lambda</span> x: x[<span style="color:#0ff;font-weight:bold">&#34;date&#34;</span>].apply(<span style="color:#fff;font-weight:bold">lambda</span> y: y.hour),
+        )
+    )
+
+    <span style="color:#fff;font-weight:bold">return</span> df
+</code></pre></div><p>That looks a lot better, and most importantly, it gets incredibily easier to debug when you get an error. At first I thought I would be using black only after I finished writing my functions, but now it&rsquo;s actually the other way around, by constantly keeping the same clean code style I can spot the bugs faster.</p>
+<h2 id="long-messy-functions">Long, messy functions</h2>
+<p>Now we are going to simulate a function with many parameters. This example was taken from the great blog <a href="http://www.blog.pythonlibrary.org/2019/07/16/intro-to-black-the-uncompromising-python-code-formatter/">Mouse vs Python</a> by <a href="https://twitter.com/driscollis">Mike Driscoll</a>.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> long_func(x, param_one=None, param_two=[], param_three={}, param_four=None, param_five=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>, param_six=<span style="color:#ff0;font-weight:bold">123456</span>):
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;{param_three[&#39;first&#39;]}&#34;</span>)
+</code></pre></div><p>The function takes a lot of (unnecessary) arguments and then prints one of the values of the <code>dictionary</code> <em>param_three</em>. But what happens if we pass a <code>list</code> instead is that we get an error, and we can see that with such a long function, if the parameters were more difficult to debug and read this could turn out in one of these bugs that look abvious to solve but you can&rsquo;t find which parameter you are messing with.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">long_func(<span style="color:#ff0;font-weight:bold">2</span>, param_one=None, param_two=[], param_three=[<span style="color:#0ff;font-weight:bold">&#39;cat&#39;</span>], param_four=None, param_five=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>, param_six=<span style="color:#ff0;font-weight:bold">123456</span>)
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-49-72b71a3bb5df&gt; in &lt;module&gt;
+----&gt; 1 long_func(2, param_one=None, param_two=[], param_three=['cat'], param_four=None, param_five=&quot;&quot;, param_six=123456)
+
+
+&lt;ipython-input-48-748a355c1dbb&gt; in long_func(x, param_one, param_two, param_three, param_four, param_five, param_six)
+      1 def long_func(x, param_one=None, param_two=[], param_three={}, param_four=None, param_five=&quot;&quot;, param_six=123456):
+----&gt; 2     print(f&quot;{param_three['first']}&quot;)
+
+
+TypeError: list indices must be integers or slices, not str
+</code></pre>
+<p>This is how it looks like after applying black, a lot better!</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> long_func(
+    x,
+    param_one=None,
+    param_two=[],
+    param_three={},
+    param_four=None,
+    param_five=<span style="color:#0ff;font-weight:bold">&#34;&#34;</span>,
+    param_six=<span style="color:#ff0;font-weight:bold">123456</span>,
+):
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;{param_three[&#39;first&#39;]}&#34;</span>)
+</code></pre></div><p>Even if we wanted to do type annotations it would be easy to read:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">from</span> typing <span style="color:#fff;font-weight:bold">import</span> List, Dict, Tuple
+
+
+<span style="color:#fff;font-weight:bold">def</span> long_func(
+    x,
+    param_one: <span style="color:#fff;font-weight:bold">int</span> = None,
+    param_two: List[<span style="color:#fff;font-weight:bold">str</span>] = [],
+    param_three: Dict[<span style="color:#fff;font-weight:bold">str</span>, <span style="color:#fff;font-weight:bold">bool</span>] = {<span style="color:#0ff;font-weight:bold">&#39;first&#39;</span>: True},
+    param_four: Tuple[<span style="color:#fff;font-weight:bold">int</span>, <span style="color:#fff;font-weight:bold">int</span>] = None,
+    param_five: <span style="color:#fff;font-weight:bold">str</span> = <span style="color:#0ff;font-weight:bold">&#34;&#34;</span>,
+    param_six: <span style="color:#fff;font-weight:bold">float</span> = <span style="color:#ff0;font-weight:bold">123456.34</span>,
+) -&gt; <span style="color:#fff;font-weight:bold">bool</span>:
+    
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;{param_three[&#39;first&#39;]}&#34;</span>)
+    <span style="color:#fff;font-weight:bold">return</span> param_three[<span style="color:#0ff;font-weight:bold">&#39;first&#39;</span>]
+</code></pre></div><p>Another thing I love about black is that it won&rsquo;t reformat the code if there are syntax mistakes, and sometimes this has let me spot the before executing a slow function, which would have made me notice the error only during runtime.</p>
+<p>For example in the function above if we had used <code>--&gt;</code> for the return value annotation instead of <code>-&gt;</code> (this has happened to me very often), black would not have changed the original (unreadable) function.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> long_func(x, param_one: <span style="color:#fff;font-weight:bold">int</span> = None, param_two: List[<span style="color:#fff;font-weight:bold">str</span>] = [], param_three: Dict[<span style="color:#fff;font-weight:bold">str</span>, <span style="color:#fff;font-weight:bold">bool</span>] = {<span style="color:#0ff;font-weight:bold">&#39;first&#39;</span>: True},
+              param_four: Tuple[<span style="color:#fff;font-weight:bold">int</span>, <span style="color:#fff;font-weight:bold">int</span>] = None, param_five: <span style="color:#fff;font-weight:bold">str</span> = <span style="color:#0ff;font-weight:bold">&#34;&#34;</span>,
+              param_six: <span style="color:#fff;font-weight:bold">float</span> = <span style="color:#ff0;font-weight:bold">123456.34</span>) --&gt; <span style="color:#fff;font-weight:bold">bool</span>:
+                                    <span style="color:#007f7f">##     ^^^^ this is not correct</span>
+                                    <span style="color:#007f7f">##     so this cell won&#39;t be formatted</span>
+                                    <span style="color:#007f7f">##     when applying black!</span>
+                                    <span style="color:#007f7f">##</span>
+                                    <span style="color:#007f7f">##     I&#39;m using &#39;bool&#39; because I added</span>
+                                    <span style="color:#007f7f">##     a return True at the end.</span>
+                            
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;{param_three[&#39;first&#39;]}&#34;</span>)
+
+    <span style="color:#fff;font-weight:bold">return</span> True
+</code></pre></div><pre><code>  File &quot;&lt;ipython-input-1-e610204a317b&gt;&quot;, line 3
+    param_six: float = 123456.34) --&gt; bool:
+                                  ^
+SyntaxError: invalid syntax
+</code></pre>
+<h2 id="bonus">Bonus</h2>
+<p>Since we are talking about formatting and debugging, I would like to show something I found recently, and it is the advantages of splitting code in multiple lines.</p>
+<p>To illustrate it I am going to use list comprehensions. The example is taken from this <a href="https://treyhunner.com/2019/03/abusing-and-overusing-list-comprehensions-in-python/">blog post</a> by <a href="https://twitter.com/treyhunner">@treyhunner</a>, which I highly recommend.</p>
+<p>We are going to write a function to get the factors of a number using a list comprehension.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> get_factors(dividend):
+    <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;Return a list of all factors of the given number.&#34;&#34;&#34;</span>
+    <span style="color:#fff;font-weight:bold">return</span> [n <span style="color:#fff;font-weight:bold">for</span> n in <span style="color:#fff;font-weight:bold">range</span>(<span style="color:#ff0;font-weight:bold">1</span>, dividend + <span style="color:#ff0;font-weight:bold">1</span>) <span style="color:#fff;font-weight:bold">if</span> dividend % n == <span style="color:#ff0;font-weight:bold">0</span>]
+</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">get_factors(<span style="color:#ff0;font-weight:bold">134</span>)
+</code></pre></div><pre><code>[1, 2, 67, 134]
+</code></pre>
+<p>But if we happen to mess the variables and we try to add an <strong>int</strong> and a <strong>string</strong>:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#fff;font-weight:bold">def</span> get_factors(dividend):
+    <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;Return a list of all factors of the given number.&#34;&#34;&#34;</span>
+
+    num = <span style="color:#0ff;font-weight:bold">&#34;ops, this was supposed to be a number, not a string&#34;</span>
+
+    <span style="color:#fff;font-weight:bold">return</span> [n <span style="color:#fff;font-weight:bold">for</span> n in <span style="color:#fff;font-weight:bold">range</span>(<span style="color:#ff0;font-weight:bold">1</span>, dividend + num) <span style="color:#fff;font-weight:bold">if</span> dividend % n == <span style="color:#ff0;font-weight:bold">0</span>]
+</code></pre></div><div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">get_factors(<span style="color:#ff0;font-weight:bold">134</span>)
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-56-dc9aa8e3ca2e&gt; in &lt;module&gt;
+----&gt; 1 get_factors(134)
+
+
+&lt;ipython-input-55-9abb3284b2d3&gt; in get_factors(dividend)
+      4     num = &quot;ops, this was supposed to be a number, not a string&quot;
+      5 
+----&gt; 6     return [n for n in range(1, dividend + num) if dividend % n == 0]
+
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+</code></pre>
+<p>Now we are getting an error, but we don&rsquo;t know exactly in what part of the comprehensions it is (this is just for illustration, in this case it is very easy to see where the bug is).</p>
+<p>However, if we had sepparated the comprehension in multiple lines, we would now exactly where the error is:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007f7f"># fmt: off</span>
+<span style="color:#fff;font-weight:bold">def</span> get_factors(dividend):
+    <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;Return a list of all factors of the given number.&#34;&#34;&#34;</span>
+    
+    num = <span style="color:#0ff;font-weight:bold">&#34;ops, this was supposed to be a number, not a string&#34;</span>
+
+    <span style="color:#fff;font-weight:bold">return</span> [
+        n
+        <span style="color:#fff;font-weight:bold">for</span> n in <span style="color:#fff;font-weight:bold">range</span>(<span style="color:#ff0;font-weight:bold">1</span>, dividend + num)
+        <span style="color:#fff;font-weight:bold">if</span> dividend % n == <span style="color:#ff0;font-weight:bold">0</span>
+    ]
+<span style="color:#007f7f"># fmt: on</span>
+
+get_factors(<span style="color:#ff0;font-weight:bold">134</span>)
+</code></pre></div><pre><code>---------------------------------------------------------------------------
+
+TypeError                                 Traceback (most recent call last)
+
+&lt;ipython-input-57-88ff78e5b1e0&gt; in &lt;module&gt;
+     12 # fmt: on
+     13 
+---&gt; 14 get_factors(134)
+
+
+&lt;ipython-input-57-88ff78e5b1e0&gt; in get_factors(dividend)
+      7     return [
+      8         n
+----&gt; 9         for n in range(1, dividend + num)
+     10         if dividend % n == 0
+     11     ]
+
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+</code></pre>
+<p>We can see the interpreter points at the exact line (9) where the problematic variable is. This can also be useful when creating <strong>pandas pivot tables</strong>, since it&rsquo;s easy to make mistakes the first times you do it.</p>
+<p>Lastly, notice the comments <code># fmt: off</code> and <code># fmt: on</code>. Those are because black would reformat that function to a one-line comprehension 😂, and with that comments we can avoid it.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007f7f"># fmt: off</span>
+<span style="color:#fff;font-weight:bold">def</span> get_factors(dividend):
+    <span style="color:#0ff;font-weight:bold">&#34;&#34;&#34;Return a list of all factors of the given number.&#34;&#34;&#34;</span>
+    <span style="color:#fff;font-weight:bold">return</span> [
+        n
+        <span style="color:#fff;font-weight:bold">for</span> n in <span style="color:#fff;font-weight:bold">range</span>(<span style="color:#ff0;font-weight:bold">1</span>, dividend + <span style="color:#ff0;font-weight:bold">1</span>)
+        <span style="color:#fff;font-weight:bold">if</span> dividend % n == <span style="color:#ff0;font-weight:bold">0</span>
+    ]
+<span style="color:#007f7f"># fmt: on</span>
+</code></pre></div><p>In the end, formatting is something very personal. After starting to use black I found the consistency of the formatting really helped me be more productive and also understand the code faster we I went back to it.</p>
+<p>The trend with Jupyter notebooks is quite clear, more and more tools keep appearing and more people are using them. One of the use cases for notebooks nowadays is teaching, and there&rsquo;s no doubt why, but being able to split your functions and outputs to make it clearer does not mean unreadable code is allowed. I believe many tutorials would be easier to follow only if the code were kept consistent and readable across notebooks.</p>
+<p>To sum up, I found using a code formatter while writing code in Jupyter made me a lot more productive and it&rsquo;s something I will thank myself for  if I ever need to reread an old notebook.</p>
+<p><strong>I hope you enjoyed it!</strong></p>
+			</div>
+
+			<div class="tags">
+				
+					
+						<ul class="flat">
+							
+							<li>
+								<a href="/tags/pandas">pandas</a>
+							</li>
+							
+							<li>
+								<a href="/tags/formatting">formatting</a>
+							</li>
+							
+							<li>
+								<a href="/tags/black">black</a>
+							</li>
+							
+							<li>
+								<a href="/tags/code">code</a>
+							</li>
+							
+							<li>
+								<a href="/tags/comprehension">comprehension</a>
+							</li>
+							
+							<li>
+								<a href="/tags/list">list</a>
+							</li>
+							
+						</ul>
+					
+				
+			</div>
+
+			
+		</div>
+	</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2019  <a href="https://github.com/polyrand/hugo-ink">Ink</a> theme on <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+<script>feather.replace()</script>
+</body>
+</html>
