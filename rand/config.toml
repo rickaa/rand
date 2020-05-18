@@ -35,10 +35,10 @@ pygmentscodefencesguesssyntax = true
   linkedin = "ricardoanderegg"
   telegram = "rick_dolphin"
 
-# [[menu.main]]
-#     name = "Home"
-#     url = "/"
-#     weight = 1
+[[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
 
 [[menu.main]]
     name = "Blog"
@@ -51,8 +51,8 @@ pygmentscodefencesguesssyntax = true
     weight = 3
     
 [[menu.main]]
-    name = "Cooking"
-    url = "/cook"
+    name = "Recipes"
+    url = "/recipes"
     weight = 4
 
 [[menu.main]]

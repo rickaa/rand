@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html {{- if (eq .Site.Params.mode "dark") -}}class="dark"{{ end }}>
+<!-- {{- if (eq .Site.Params.mode "dark") -}}class="dark"{{ end }} -->
+<html>
 {{ partial "header.html" . }}
 <body>
-	<div class="container wrapper">
+	<!-- container wrapper -->
+	<div class="max-w-3xl m-auto mt-8 ml-2 sm:ml-16 sm:mt-12">
 		{{ partial "head.html" . }}
 
 		<div class="post">

@@ -3,28 +3,25 @@
 {{ partial "header.html" . }}
 
 <body>
-	<div class="container wrapper list">
+	<div class="max-w-3xl m-auto mt-8 ml-2 sm:ml-16 sm:mt-12">
 		{{ partial "head.html" . }}
-
 		{{ if isset .Data "Term" }}
 			<h2>{{ .Data.Term }}</h2>
 		{{ else }}
-		<h2 class="page-title">{{ .Name }}</h2>
+		<h2 class="">{{ .Name }}</h2>
 		{{ end }}
-
-		<ul class="posts flat">
+		<ul class="p-0">
 			{{- range .Data.Pages -}}
 			{{- if (in (.Site.Params.excludedTypes | default (slice "page")) .Type) -}}
 			{{- else -}}
-			<li class="post">
-					<div class="flex items-center mb-6 text-xs">
-						<div>  <!--- aqui iba un class=meta --->
-							<div class="w-20 date"> <!--- abajo iba un class=rest --->
+			<li class="block list-none">
+					<div class="flex items-center mb-4 text-xs">
+						<div>
+							<div class="w-20 date">
 								<span>{{ dateFormat "02" .Date }}, {{ if $.Site.Data.month }}{{ index $.Site.Data.month (printf "%d" .Date.Month) }} {{ .Date.Year }}{{ else }}{{ dateFormat "Jan 2006" .Date }}{{ end }}</span>
 							</div>
 						</div>
-						 <!--- abajo iba un class=matter<div></div> --->
-							<h4 class="title small">
+							<h4 class="ml-4">
 								<a href="{{ .RelPermalink }}">{{.Title}}</a>
 							</h4>
 					</div>
