@@ -7,20 +7,17 @@
 		</div>
 	{{ end }}
 	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-	<div class="flex items-center border-2 border-yellow-600 site-description">
+	<div class="flex items-center justify-start border-2 border-yellow-600 site-description">
 		{{- if isset .Site.Params "subtitle" -}}
 		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
 		{{- end -}}
-		<nav class="nav social">
-			<ul class="hidden border-2 border-indigo-700 sm:flex flat">
+		<nav class="block sm:flex nav social">
+			<ul class="border-2 border-indigo-700 flat">
 				{{- range $index, $key := .Site.Params.Social -}}
 					<li><a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a></li>
 				{{- end -}}
 			</ul>
 		</nav>
-                {{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
-                <span class="scheme-toggle"><a href="#" id="scheme-toggle"></a>
-                {{- end -}}
 	</div>
 
 	<nav class="border-2 border-blue-600 nav">

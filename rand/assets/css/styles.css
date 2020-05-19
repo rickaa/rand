@@ -11,7 +11,7 @@
 body {
   font-family: "Inter", sans-serif;
   /* maybe leading loose */
-  @apply text-lg font-normal leading-relaxed text-gray-900;
+  @apply text-lg font-normal leading-relaxed text-gray-900 bg-gray-100;
 }
 
 h1 {
@@ -37,12 +37,14 @@ h6 {
 }
 
 a {
-  @apply text-gray-900 no-underline break-words;
+  @apply text-gray-900 underline break-words;
 }
 
 a:hover {
-  @apply border-b-2 border-gray-900;
+  @apply border-gray-900;
 }
+
+li 
 
 /* font-weight: 500;
   line-height: 1.3em;
@@ -130,8 +132,16 @@ p {
 }
 
 p code {
-  @apply p-1 font-mono bg-gray-200;
+  @apply p-1 font-mono bg-orange-100;
 }
+
+.highlight pre {
+  @apply p-2 pl-4 my-8 overflow-x-auto;
+}
+
+/* pre code {
+  @apply p-2 font-mono bg-red-200;
+} */
 
 textarea {
   resize: vertical;
@@ -161,20 +171,17 @@ ul {
 }
 
 pre {
-  @apply overflow-x-auto bg-gray-100;
+  @apply p-1 overflow-x-auto;
 }
 
-.highlight {
-  @apply bg-gray-300;
-}
+/* .highlight {
+  @apply bg-gray-800;
+} */
 
 /* margin-bottom: 0;
     margin-top: 0;
     padding: 20px;
     background-color: transparent !important; */
-.highlight pre {
-  @apply p-4 mt-4 mb-4 overflow-x-auto bg-gray-800;
-}
 
 @media (max-width: 900px) {
   body {
@@ -267,7 +274,7 @@ pre {
 
 .header .site-description {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .header nav {
