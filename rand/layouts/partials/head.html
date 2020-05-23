@@ -1,29 +1,42 @@
-<div class="border-2 border-red-600 header">
-	{{ if .Site.Params.Avatar }}
-		<div class="border-2 border-gray-600 avatar">
-			<a href="{{ .Site.BaseURL }}">
-				<img src="{{ .Site.Params.Avatar }}" alt="{{ .Site.Title }}" />
-			</a>
+<div class="block w-full">
+	{{/*  border-2 border-indigo-700  */}}
+	<div class="flex w-full">
+		{{/*  border-2 border-red-600  */}}
+		<div class="flex items-center justify-start w-full header">
+			{{ if .Site.Params.Avatar }}
+				<div class="float-left mx-2 my-auto avatar">
+					<a href="{{ .Site.BaseURL }}">
+						<img class="w-20 h-20 overflow-hidden rounded-full" src="{{ .Site.Params.Avatar }}" alt="{{ .Site.Title }}" />
+					</a>
+				</div>
+			{{ end }}
+			<div class="block mb-4 ml-6">
+				{{/*  border-2 border-red-800  */}}
+				<h1 class=""><a class="no-underline hover:underline" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
+				{{/*  border-2 border-yellow-600  */}}
+				<div class="items-center block sm:flex site-description">
+					{{- if isset .Site.Params "subtitle" -}}
+					<p class="mr-2">{{ .Site.Params.Subtitle | markdownify }}</p>
+					{{- end -}}
+					{{/*  border-2 border-t border-white  */}}
+					<nav class="">
+						{{/*  border-2 border-indigo-300  */}}
+						<ul class="inline-flex items-center p-1 m-0 list-none sm:ml-4">
+							<li class="h-5 mr-2 sm:mr-4"><a href="https://github.com/polyrand" title="Github"><i><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></i></a></li>
+							<li class="h-5 mr-2 sm:mr-4"><a href="https://www.linkedin.com/in/ricardoanderegg/" title="LinkedIn"><i class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></i></a></li>
+							<li class="h-5 mr-2 sm:mr-4"><a href="https://twitter.com/ricardoanderegg" title="Twitter"><i class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></i></a></li>
+							<li class="h-5 mr-2 sm:mr-4"><a href="mailto:ricardo.anderegg@gmail.com" title="Mail"><i class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></i></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
 		</div>
-	{{ end }}
-	<h1 class="site-title"><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-	<div class="flex items-center justify-start border-2 border-yellow-600 site-description">
-		{{- if isset .Site.Params "subtitle" -}}
-		<p>{{ .Site.Params.Subtitle | markdownify }}</p>
-		{{- end -}}
-		<nav class="block sm:flex nav social">
-			<ul class="border-2 border-indigo-700 flat">
-				{{- range $index, $key := .Site.Params.Social -}}
-					<li><a href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a></li>
-				{{- end -}}
-			</ul>
-		</nav>
 	</div>
-
-	<nav class="border-2 border-blue-600 nav">
+	{{/*  border-blue-600  */}}
+	<nav class="pt-3">
 		<ul class="p-0 m-0">
 			{{ range .Site.Menus.main }}
-			<li>
+			<li class="inline-block p-0 m-0 mr-8 list-none">
 				<a href="{{ .URL }}">{{ .Name }}</a>
 			</li>
 			{{ end }}

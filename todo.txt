@@ -13,4 +13,5 @@ https://github.com/budparr/hugopipes-tailwindcss
 
 https://github.com/knadh/hugo-ink/blob/master/exampleSite/config.toml
 
-
+add @font-face
+https://tailwindcss.com/docs/adding-base-styles/

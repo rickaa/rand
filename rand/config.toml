@@ -41,17 +41,17 @@ pygmentscodefencesguesssyntax = true
     weight = 1
 
 [[menu.main]]
-    name = "Blog"
+    name = "Code"
     url = "/posts"
     weight = 2
 
 [[menu.main]]
-    name = "Thoughts"
+    name = "Think"
     url = "/thoughts"
     weight = 3
     
 [[menu.main]]
-    name = "Recipes"
+    name = "Cook"
     url = "/recipes"
     weight = 4
 
@@ -65,30 +65,30 @@ pygmentscodefencesguesssyntax = true
   tag = "tags"
 
 
-[[params.social]]
-  name = "Github"
-  icon = "github"
-  url = "https://github.com/polyrand"
-
-[[params.social]]
-  name = "LinkedIn"
-  icon = "linkedin"
-  url = "https://www.linkedin.com/in/ricardoanderegg/"
-
-[[params.social]]
-  name = "Twitter"
-  icon = "twitter"
-  url = "https://twitter.com/ricardoanderegg"
+# [[params.social]]
+#   name = "Github"
+#   icon = "github"
+#   url = "https://github.com/polyrand"
+# 
+# [[params.social]]
+#   name = "LinkedIn"
+#   icon = "linkedin"
+#   url = "https://www.linkedin.com/in/ricardoanderegg/"
+# 
+# [[params.social]]
+#   name = "Twitter"
+#   icon = "twitter"
+#   url = "https://twitter.com/ricardoanderegg"
 
 # [[params.social]]
 #   name = "Telegram"
 #   icon = "send"
 #   url = "https://t.me/polyrand"
 
-[[params.social]]
-  name = "Mail"
-  icon = "mail"
-  url = "mailto:ricardo.anderegg@gmail.com"
+# [[params.social]]
+#   name = "Mail"
+#   icon = "mail"
+#   url = "mailto:ricardo.anderegg@gmail.com"
 
 # [[params.social]]
 #   name = "RSS"
