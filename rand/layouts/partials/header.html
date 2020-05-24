@@ -15,6 +15,7 @@
 	{{- end }}
 	{{- with .Content | default .Params.subtitle }}
 		<meta name="twitter:description" content="{{ . | truncate 200 }}" />
+		<meta name="description" content="{{ . | truncate 200 }}" />
 	{{- end }}
 	{{ if .Params.thumbnail }}
 		<meta property="twitter:image" content="{{ .Params.thumbnail | absURL }}" />
