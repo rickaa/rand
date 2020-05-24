@@ -1,7 +1,5 @@
 <div class="block w-full">
-	{{/*  border-2 border-indigo-700  */}}
 	<div class="flex w-full">
-		{{/*  border-2 border-red-600  */}}
 		<div class="flex items-center justify-start w-full header">
 			{{ if .Site.Params.Avatar }}
 				<div class="float-left mx-2 my-auto avatar">
@@ -11,16 +9,12 @@
 				</div>
 			{{ end }}
 			<div class="block mb-4 ml-6">
-				{{/*  border-2 border-red-800  */}}
 				<h1 class=""><a class="no-underline hover:underline" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-				{{/*  border-2 border-yellow-600  */}}
 				<div class="items-center block sm:flex site-description">
 					{{- if isset .Site.Params "subtitle" -}}
 					<p class="mr-2">{{ .Site.Params.Subtitle | markdownify }}</p>
 					{{- end -}}
-					{{/*  border-2 border-t border-white  */}}
 					<nav class="">
-						{{/*  border-2 border-indigo-300  */}}
 						<ul class="inline-flex items-center p-1 m-0 list-none sm:ml-4">
 							<li class="h-5 mr-2 sm:mr-4"><a href="https://github.com/polyrand" title="Github"><i><svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></i></a></li>
 							<li class="h-5 mr-2 sm:mr-4"><a href="https://www.linkedin.com/in/ricardoanderegg/" title="LinkedIn"><i class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></i></a></li>
@@ -32,7 +26,6 @@
 			</div>
 		</div>
 	</div>
-	{{/*  border-blue-600  */}}
 	<nav class="pt-3">
 		<ul class="p-0 m-0">
 			{{ range .Site.Menus.main }}
