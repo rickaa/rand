@@ -14,13 +14,15 @@
   		<meta name="twitter:title" content="{{ . | truncate 70 }}" />
 	{{- end }}
 	{{- with .Content | default .Params.subtitle }}
-		<meta name="twitter:description" content="{{ . | truncate 200 }}">
+		<meta name="twitter:description" content="{{ . | truncate 200 }}" />
 	{{- end }}
 	{{ if .Params.thumbnail }}
 		<meta property="twitter:image" content="{{ .Params.thumbnail | absURL }}" />
+		<meta property="og:image" content="{{ .Params.thumbnail | absURL }}" />
 	{{ else }}
 	{{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
 		<meta name="twitter:image" content="{{ . | absURL }}" />
+		<meta name="og:image" content="{{ . | absURL }}" />
 	{{- end }}
 	{{ end }}
 		<meta name="twitter:card" content="summary" />
@@ -31,19 +33,16 @@
 	{{- with .Title | default .Site.Title }}
 		<meta property="og:title" content="{{ . }}" />
 	{{- end }}
-	{{- with .Description | default .Params.subtitle | default .Summary }}
-		<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+	{{- with .Content | default .Params.subtitle | default .Summary }}
+		<meta property="og:description" content="{{ . | truncate 200 }}" />
 	{{- end }}
-  	<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+	<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
   	<meta property="og:url" content="{{ .Permalink | absLangURL }}" />
-  	{{ if .Params.thumbnail }}
-		<meta property="og:image" content="{{ .Params.thumbnail | absURL }}" />
-	{{ else }}
 	{{- with .Site.Params.fb_app_id }}
 		<meta property="fb:app_id" content="{{ . }}" />
 	{{- end }}
-  	{{ if not .Date.IsZero }}
-  	  <meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
+	{{ if not .Date.IsZero }}
+		<meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
   	{{ end }}
   	{{ with .Params.audio }}
   	  <meta property="og:audio" content="{{ . }}" />
@@ -76,7 +75,6 @@
 	{{- template "_internal/schema.html" . -}}
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
-	<!--- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700" rel="stylesheet" type="text/css"> --->
 	{{ if .Site.IsServer }}
   		{{ $style := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/dev/postcss.config.js") | fingerprint }}
  	 <link rel="stylesheet" href="{{ $style.Permalink }}" data> 
