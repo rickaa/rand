@@ -1,6 +1,6 @@
 <div class="block w-full">
 	<div class="flex w-full">
-		<div class="flex items-center justify-start w-full header">
+		<div class="flex items-center justify-center w-full header">
 			{{ if .Site.Params.Avatar }}
 				<div class="float-left mx-2 my-auto avatar">
 					<a href="{{ .Site.BaseURL }}">
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 	</div>
-	<nav class="pt-3">
+	<nav class="pt-3 flex justify-center">
 		<ul class="p-0 m-0">
 			{{ range .Site.Menus.main }}
 			<li class="inline-block p-0 m-0 mr-8 list-none">
