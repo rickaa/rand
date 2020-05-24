@@ -9,6 +9,58 @@
 		<title>{{ $title }} - {{ $siteTitle }}</title>
 	{{- end -}}
 
+
+	{{- with .Title | default .Site.Title }}
+  		<meta name="twitter:title" content="{{ . | truncate 70 }}" />
+	{{- end }}
+	{{- with .Content | default .Params.subtitle }}
+		<meta name="twitter:description" content="{{ . | truncate 200 }}">
+	{{- end }}
+	{{ if .Params.thumbnail }}
+		<meta property="twitter:image" content="{{ .Params.thumbnail | absURL }}" />
+	{{ else }}
+	{{- with .Params.share_img | default .Params.image | default .Site.Params.logo }}
+		<meta name="twitter:image" content="{{ . | absURL }}" />
+	{{- end }}
+	{{ end }}
+		<meta name="twitter:card" content="summary" />
+	{{- with .Site.Author.twitter }}
+		<meta name="twitter:site" content="@{{ . }}" />
+		<meta name="twitter:creator" content="@{{ . }}" />
+	{{- end }}
+	{{- with .Title | default .Site.Title }}
+		<meta property="og:title" content="{{ . }}" />
+	{{- end }}
+	{{- with .Description | default .Params.subtitle | default .Summary }}
+		<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
+	{{- end }}
+  	<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+  	<meta property="og:url" content="{{ .Permalink | absLangURL }}" />
+  	{{ if .Params.thumbnail }}
+		<meta property="og:image" content="{{ .Params.thumbnail | absURL }}" />
+	{{ else }}
+	{{- with .Site.Params.fb_app_id }}
+		<meta property="fb:app_id" content="{{ . }}" />
+	{{- end }}
+  	{{ if not .Date.IsZero }}
+  	  <meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}" />
+  	{{ end }}
+  	{{ with .Params.audio }}
+  	  <meta property="og:audio" content="{{ . }}" />
+  	{{ end }}
+  	{{ with .Params.locale }}
+  	  <meta property="og:locale" content="{{ . }}" />
+  	{{ end }}
+  	{{ with .Site.Params.title }}
+  	  <meta property="og:site_name" content="{{ . }}" />
+  	{{ end }}
+  	{{ with .Params.videos }}
+  	  {{ range .Params.videos }}
+  	    <meta property="og:video" content="{{ . | absURL }}" />
+  	  {{ end }}
+  	{{ end }}
+
+
 	{{- if isset .Site.Params "favicon" -}}
 		<link rel="apple-touch-icon" sizes="180x180" href="https://ricardoanderegg.com/img/apple-touch-icon.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="https://ricardoanderegg.com/img/favicon-32x32.png">

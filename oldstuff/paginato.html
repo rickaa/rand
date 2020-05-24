@@ -1,0 +1,20 @@
+
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<!-- pagination -->
+<ul class="flex justify-between p-0 m-0 text-left">   
+	<!-- page-item page-prev -->
+	<li class="text-left">
+	{{ if $pag.HasPrev }}
+	<!-- page-link -->
+    <a {{ if $pag.HasPrev }}href="{{ $pag.Prev.URL }}"{{ end }} class="" aria-label="Previous"><span aria-hidden="true">← Prev page</span></a>
+	{{ end }}
+	</li>
+	<!-- page-item page-next -->
+	<li class="text-right">
+	{{ if $pag.HasNext }}
+    <a {{ if $pag.HasNext }}href="{{ $pag.Next.URL }}"{{ end }} class="" aria-label="Next"><span aria-hidden="true">Next page →</span></a>
+	{{ end }}
+	</li>
+</ul>
+{{ end }}

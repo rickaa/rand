@@ -1,17 +1,16 @@
-redo all css for tailwind (change class names -> tailwind)
-
-remove day from single.html and leave only month/year but put it below the title
-
-list does now show well in /posts
-
-background maybe darker
-
-
-https://gohugo.io/templates/homepage/
-
-https://github.com/budparr/hugopipes-tailwindcss
-
-https://github.com/knadh/hugo-ink/blob/master/exampleSite/config.toml
-
 add @font-face
 https://tailwindcss.com/docs/adding-base-styles/
+
+http://brendan-quinn.xyz/post/working-with-hugos-internal-partial-templates-facebook-and-open-graph/
+
+
+
+
+redo all css for tailwind (change class names -> tailwind)
+remove day from single.html and leave only month/year but put it below the title
+list does now show well in /posts
+background maybe darker
+https://gohugo.io/templates/homepage/
+https://github.com/budparr/hugopipes-tailwindcss
+https://github.com/knadh/hugo-ink/blob/master/exampleSite/config.toml
+
