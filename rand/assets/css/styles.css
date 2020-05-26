@@ -121,7 +121,7 @@ p code {
 }
 
 .highlight pre {
-  @apply p-2 pl-4 my-8 overflow-x-auto;
+  @apply p-2 pl-4 my-8 overflow-x-scroll;
 }
 
 /* pre code {
@@ -156,7 +156,7 @@ ul {
 }
 
 pre {
-  @apply p-1 overflow-x-auto;
+  @apply p-1 overflow-x-scroll;
 }
 
 @media (max-width: 900px) {

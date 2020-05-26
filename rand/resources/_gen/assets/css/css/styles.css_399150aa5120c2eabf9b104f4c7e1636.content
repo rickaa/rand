@@ -16840,7 +16840,7 @@ p code {
   padding-left: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 /* pre code {
@@ -16878,7 +16878,7 @@ ul {
 
 pre {
   padding: 0.25rem;
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 @media (max-width: 900px) {
