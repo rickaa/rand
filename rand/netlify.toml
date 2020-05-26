@@ -1,6 +1,6 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify"
+command = "hugo --gc"
 
 [[redirects]]
   from = "https://rand.netlify.com/post/*"
