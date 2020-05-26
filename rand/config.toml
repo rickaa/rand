@@ -29,7 +29,7 @@ pygmentscodefencesguesssyntax = true
 [Author]
   name = "Ricardo Ander-Egg"
   website = "ricardoanderegg.com"
-  email = "ricardo.anderegg@gmail.com"
+  # email = "ricardo.anderegg@gmail.com"
   github = "polyrand"
   gitlab = "polyrand"
   twitter = "ricardoanderegg"
