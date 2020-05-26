@@ -16829,6 +16829,7 @@ p {
 
 p code {
   padding: 0.25rem;
+  overflow-x: auto;
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bg-opacity: 1;
   background-color: #fffaf0;
@@ -16840,7 +16841,7 @@ p code {
   padding-left: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 /* pre code {
@@ -16878,7 +16879,7 @@ ul {
 
 pre {
   padding: 0.25rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 @media (max-width: 900px) {

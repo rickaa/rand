@@ -117,11 +117,11 @@ p {
 }
 
 p code {
-  @apply p-1 font-mono bg-orange-100;
+  @apply p-1 overflow-x-auto font-mono bg-orange-100;
 }
 
 .highlight pre {
-  @apply p-2 pl-4 my-8 overflow-x-scroll;
+  @apply p-2 pl-4 my-8 overflow-x-auto;
 }
 
 /* pre code {
@@ -156,7 +156,7 @@ ul {
 }
 
 pre {
-  @apply p-1 overflow-x-scroll;
+  @apply p-1 overflow-x-auto;
 }
 
 @media (max-width: 900px) {

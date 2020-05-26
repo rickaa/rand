@@ -1,0 +1,6 @@
+<p><a href="https://tinyletter.com" target="_blank">powered by TinyLetter</a></p>
+
+border:1px solid #ccc;padding:3px;text-align:center;
+
+
+<p><label for="tlemail">Enter your email address</label></p>
