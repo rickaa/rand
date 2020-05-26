@@ -16681,6 +16681,8 @@ video {
   transition-delay: 1000ms;
 }
 
+/* purgecss start ignore */
+
 body {
   font-family: "Inter", sans-serif;
   /* maybe leading loose */
@@ -16842,7 +16844,6 @@ p code {
   margin-top: 2rem;
   margin-bottom: 2rem;
   overflow-x: auto;
-  border-radius: 0.5rem;
 }
 
 .highlight {
@@ -16926,6 +16927,8 @@ pre {
     width: 100%;
   }
 }
+
+/* purgecss end ignore */
 
 /* .header {
   margin-bottom: 10px;

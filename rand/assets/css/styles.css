@@ -4,6 +4,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+/* purgecss start ignore */
 body {
   font-family: "Inter", sans-serif;
   /* maybe leading loose */
@@ -201,6 +202,7 @@ pre {
     width: 100%;
   }
 }
+/* purgecss end ignore */
 
 /* .header {
   margin-bottom: 10px;
