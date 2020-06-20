@@ -4,7 +4,7 @@ date = "2020-06-16"
 author = "Ricardo"
 categories = ["bash"]
 tags = ["bash", "scripting", "parallel"]
-thumbnail = "img/bike.jpeg"
+thumbnail = "img/social/bash_function.png"
 +++
 android-chrome-512x512
 
