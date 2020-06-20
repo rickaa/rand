@@ -118,4 +118,4 @@ sys	0m1.746s
 
 It is running ~27% faster. Only by wrapping the code in different functions.
 
-As an extra, in bash the code is not evaluated all at once. If you edit a script while it is being executed, [the script behave differently](https://thomask.sdf.org/blog/2019/11/09/take-care-editing-bash-scripts.html). Wrapping it in functions solves that problem too.
+As an extra, in bash the code is not evaluated all at once. If you edit a script while it is being executed, [the script behaves differently](https://thomask.sdf.org/blog/2019/11/09/take-care-editing-bash-scripts.html). Wrapping it in functions solves that problem too.
