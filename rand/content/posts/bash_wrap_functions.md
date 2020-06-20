@@ -4,8 +4,9 @@ date = "2020-06-16"
 author = "Ricardo"
 categories = ["bash"]
 tags = ["bash", "scripting", "parallel"]
+thumbnail = "img/bike.jpeg"
 +++
-
+android-chrome-512x512
 
 I wrote my degree dissertation in jupyter notebooks. Then I converted them to markdown and finally to pdf with pandoc. I also had to output an office file so that my tutor could work on it too. The initial code was:
 
