@@ -6,7 +6,6 @@ categories = ["bash"]
 tags = ["bash", "scripting", "parallel"]
 thumbnail = "img/social/bash_function.png"
 +++
-android-chrome-512x512
 
 I wrote my degree dissertation in jupyter notebooks. Then I converted them to markdown and finally to pdf with pandoc. I also had to output an office file so that my tutor could work on it too. The initial code was:
 
