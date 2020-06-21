@@ -12,7 +12,7 @@ Some problems are harder than others, but having a system to approach them makes
 
 Yesterday I finished teaching my first Python course. Apart from teaching about generators, decorators, coroutines, multiprocessing, pandas, flask, pytest, docker... and a long list of development tools and Python modules, I tried to transmit an important message I believe is a lot more fundamental than knowing all the technicalities, and it is problem solving.
 
-We, not only as programmers but in life in general, have to solve things constantly, wether it's at work, at home, or with ourselves. Facing the problem as such can become daunting and look impossible at first, having techniques to work through them can be an incredibly helpful tool. For me that technique can be summarized in three words: Divide. Search. Abstract.
+We, not only as programmers but in life in general, have to solve things constantly, whether it's at work, at home, or with ourselves. Facing the problem as such can become daunting and look impossible at first, having techniques to work through them can be an incredibly helpful tool. For me that technique can be summarized in three words: Divide. Search. Abstract.
 
 To illustrate the method I will use a simple problem: writing a function to generate random email strings.
 
@@ -23,7 +23,7 @@ First, we **divide** the problem as much as we can or need. In our case the firs
 * Generate domain `(gmail hotmail outlook ...)`.
 * Generate domain root `(.com .es .org .edu ...)`.
 
-Lets now tackle the first part. We need to be able to make random choices, that looks like a very common problem, so the chances someone has already worked on that are very high. A quick Google **search** lands us on the Python documentation from the [random](https://docs.python.org/3/library/random.html) module, and it seems the method `random.choice()` does just that.
+Let's now tackle the first part. We need to be able to make random choices, that looks like a very common problem, so the chances someone has already worked on that are very high. A quick Google **search** lands us on the Python documentation from the [random](https://docs.python.org/3/library/random.html) module, and it seems the method `random.choice()` does just that.
 
 Now we need to generate the username, we can **divide** that problem as well:
 
@@ -32,7 +32,7 @@ Now we need to generate the username, we can **divide** that problem as well:
   * Choose random elements from that set.
   * Make the user able to choose the length of the username created.
 
-For the first part, another quick **search** tells us about `string.ascii_lowercase`, which is just what we need. The second part was already solved before. Lets see if they work together.
+For the first part, another quick **search** tells us about `string.ascii_lowercase`, which is just what we need. The second part was already solved before. Let's see if they work together.
 
 
 ```python
@@ -49,7 +49,7 @@ choice(letters)
 
 
 
-Fantastic, we have already solve a tiny bit of our problem, we only need to make a loop and generate many random letters. For this part, a list comprehension together with `range()` will make it for us.
+Fantastic, we have already solved a tiny bit of our problem, we only need to make a loop and generate many random letters. For this part, a list comprehension together with `range()` will make it for us.
 
 
 ```python
@@ -79,7 +79,7 @@ Lastly, we need to concatenate those characters. Another **search** will show us
 
 Awesome 🎉, we have done the first part of our problem, and not only that, now we are more prepared for the next parts.
 
-Choosing random letters to get a valid domain and root doesn't look appropiate, having our own lists for that seems easier:
+Choosing random letters to get a valid domain and root doesn't look appropriate, having our own lists for that seems easier:
 
 
 ```python
@@ -99,7 +99,7 @@ print(choice(roots))
     .xyz
 
 
-We have already solved many important points of our problem, so it may be a good idea to start **abstracting** them inside a function. By **abtracting** it we are not only freeing space in our minds, but also making it easier for other people to use, work with and build upon what we have created.
+We have already solved many important points of our problem, so it may be a good idea to start **abstracting** them inside a function. By **abstracting** it we are not only freeing space in our minds, but also making it easier for other people to use, work with and build upon what we have created.
 
 
 ```python
@@ -185,6 +185,6 @@ Finally! We have finished our function. Now we can keep working on it adding fea
 
 I know the problem showed here is quite simple, but it's more than enough to illustrate the technique.
 
-Problems may be more or less tedious to solve, but by dividing them into smaller parts, seraching for information to solve those smaller parts (Google, documentation, books...), and finally abstracting those, will get us a lot closer to solving it than if we just try to approach it as a whole.
+Problems may be more or less tedious to solve, but by dividing them into smaller parts, searching for information to solve those smaller parts (Google, documentation, books...), and finally abstracting those, will get us a lot closer to solving it than if we just try to approach it as a whole.
 
 In the end, if we are where we are, solving the problems of our current time is because some people in the past took the problems of their time, solved their little parts and then abstracted that solution into a tool we can use.

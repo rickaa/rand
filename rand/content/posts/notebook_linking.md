@@ -12,7 +12,7 @@ There is a little trick I just found about, which I think can be very useful whe
 
 Jupyter notebooks keep gaining popularity and use cases, the rapid growth of the tooling ecosystem around it is just one proof (for example [voilà](https://github.com/QuantStack/voila) or [panel](https://panel.pyviz.org/)).
 
-Most people choose Jupyter when publishing a course or tutorial on Github and that's great, but wheen there are a lot of notebooks it can become messy.
+Most people choose Jupyter when publishing a course or tutorial on Github and that's great, but when there are a lot of notebooks it can become messy.
 
 I am now working on a project and I'm separating tasks in different notebooks like:
 
@@ -32,4 +32,4 @@ And I found you can link a notebook from another one like you would link to a no
 [task foo](../notebooks/02.task2.ipynb)
 ```
 
-Even though this is something very simple, I think it can be useful at work or if you are distributing a book as Jupyter notebooks and need to refer to a previous notebook/chapter. This way you are only one click away and don't need to llok for it!
+Even though this is something very simple, I think it can be useful at work or if you are distributing a book as Jupyter notebooks and need to refer to a previous notebook/chapter. This way you are only one click away and don't need to look for it!

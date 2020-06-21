@@ -10,7 +10,7 @@ tags = ["pandas", "formatting", "black", "code", "comprehension", "list"]
 After nearly a year coding in Python (although not consistently), I started trying code formatters and discovered they were more useful than I thought. Here are some reason why.
 <!--more-->
 
-First of all I must admit these tips may be biased by the fact I use [Jupyter Notebooks](https://jupyterlab.readthedocs.io/en/stable/) quite a lot. I think they are an incredible tool for learning although they may also instill some bad coding habits.
+First, I must admit these tips may be biased by the fact I use [Jupyter Notebooks](https://jupyterlab.readthedocs.io/en/stable/) quite a lot. I think they are an incredible tool for learning although they may also instill some bad coding habits.
 
 Before talking about [black](https://github.com/psf/black) lets go through the step to install it and use it with Jupyter Notebooks.
 
@@ -54,7 +54,7 @@ Now lets go back to code ❗️
 
 ## Pandas method chaining
 
-I believe one of those bad habits that Jupyter creates is writing code that doesn't look very clean when used outside the notebook. One case can be when using [method-chaining](https://tomaugspurger.github.io/method-chaining) in Pandas, which is the currently promoted style when cleaning data. Lets look at an example.
+I believe one of those bad habits that Jupyter creates is writing code that doesn't look very clean when used outside the notebook. One case can be when using [method-chaining](https://tomaugspurger.github.io/method-chaining) in Pandas, which is the currently promoted style when cleaning data. Let's look at an example.
 
 
 ```python
@@ -118,7 +118,7 @@ def read_messages(path):
     return df
 ```
 
-That looks a lot better, and most importantly, it gets incredibily easier to debug when you get an error. At first I thought I would be using black only after I finished writing my functions, but now it's actually the other way around, by constantly keeping the same clean code style I can spot the bugs faster.
+That looks a lot better, and most importantly, it gets incredibly easier to debug when you get an error. At first, I thought I would be using black only after I finished writing my functions, but now it's actually the other way around, by constantly keeping the same clean code style I can spot the bugs faster.
 
 ## Long, messy functions
 
@@ -130,7 +130,7 @@ def long_func(x, param_one=None, param_two=[], param_three={}, param_four=None, 
     print(f"{param_three['first']}")
 ```
 
-The function takes a lot of (unnecessary) arguments and then prints one of the values of the `dictionary` *param_three*. But what happens if we pass a `list` instead is that we get an error, and we can see that with such a long function, if the parameters were more difficult to debug and read this could turn out in one of these bugs that look abvious to solve but you can't find which parameter you are messing with.
+The function takes a lot of (unnecessary) arguments and then prints one of the values of the `dictionary` *param_three*. But what happens if we pass a `list` instead is that we get an error, and we can see that with such a long function, if the parameters were more difficult to debug and read this could turn out in one of these bugs that look obvious to solve but you can't find which parameter you are messing with.
 
 
 ```python
@@ -247,7 +247,7 @@ get_factors(134)
 
 
 
-But if we happen to mess the variables and we try to add an **int** and a **string**:
+But if we happen to mess the variables, and we try to add an **int** and a **string**:
 
 
 ```python
@@ -284,7 +284,7 @@ get_factors(134)
 
 Now we are getting an error, but we don't know exactly in what part of the comprehensions it is (this is just for illustration, in this case it is very easy to see where the bug is).
 
-However, if we had sepparated the comprehension in multiple lines, we would now exactly where the error is:
+However, if we had separated the comprehension in multiple lines, we would know exactly where the error is:
 
 
 ```python
@@ -350,10 +350,3 @@ The trend with Jupyter notebooks is quite clear, more and more tools keep appear
 To sum up, I found using a code formatter while writing code in Jupyter made me a lot more productive and it's something I will thank myself for  if I ever need to reread an old notebook.
 
 **I hope you enjoyed it!**
-
-  
-  
-  
-  
-
-

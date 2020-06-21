@@ -7,7 +7,7 @@ tags = ["fasttext", "nlp", "text", "language", "identification", "classification
 +++
 
 
-When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I'll show a way to do a fast ⚡️ and reliable ✨ languague identification with [fasttext](https://fasttext.cc).
+When dealing with a multilingual dataset doing language identification is a very important part of the analysis process, here I'll show a way to do a fast ⚡️ and reliable ✨ language identification with [fasttext](https://fasttext.cc).
 <!--more-->
 
 **TL;DR**
@@ -174,7 +174,7 @@ First 10 tweets:
     Name: Tweet, dtype: object
 
 
-Looking at the first 10 tweets we can already see the are multiple languags been used. Lets now use fasttext to classify them. You need to download the language indentification model to use it, run the following shell command if you need to do so.
+Looking at the first 10 tweets we can already see there are multiple languages been used. Let's now use fasttext to classify them. You need to download the language identification model to use it, run the following shell command if you need to do so.
 
 ```bash
 wget https://dl.fbaipublicfiles.com/fasttext/supervised-models/lid.176.bin
@@ -223,7 +223,7 @@ print(f"Text:\n \t {tweet} \n \n Prediction:\n \t {prediction}")
 
 The output of the prediction is a tuple of language label and prediction confidence. Language label is a string with “\__label__” followed by ISO 639 code of the language. You can check the language codes [here](https://www.loc.gov/standards/iso639-2/php/code_list.php) and the languages supported by fasttext at the end of [their blog post](https://fasttext.cc/blog/2017/10/02/blog-post.html).
 
-Lets try with a different one.
+Let's try with a different one.
 
 
 ```python
@@ -237,7 +237,7 @@ print(f"Text:\n \t {corpus[4]} \n \n Prediction:\n \t {lid_model.predict(corpus[
      	 (('__label__en',), array([0.65553886]))
 
 
-Now we can create a new column with the langue of each tweet.
+Now we can create a new column with the language of each tweet.
 
 
 ```python
