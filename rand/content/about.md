@@ -2,7 +2,7 @@
 title: About me
 subtitle: Why you'd want to have a coffee with me 😊
 comments: false
-date = "2019-06-01"
+date: "2019-06-01"
 ---
 
 My name is Ricardo Ander-Egg Aguilar. I am currently studyng medicine in
