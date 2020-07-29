@@ -52,7 +52,7 @@ pygmentscodefencesguesssyntax = true
     weight = 3
     
 [[menu.main]]
-    name = "Cook"
+    name = "Recipes"
     url = "/recipes"
     weight = 4
 
