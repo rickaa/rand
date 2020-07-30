@@ -7,7 +7,9 @@ tags = ["docker", "remote", "ssh"]
 thumbnail = "img/social/connections1.jpg"
 +++
 
-Reliable remote docker connections.
+I could not get reliable connections with docker-machine or docker context. This is how I got 100% reliable connections through ssh forwarding.
+
+It's also more secure. You don't need to expose any additional ports.
 
 ```sh
 # create bash function
