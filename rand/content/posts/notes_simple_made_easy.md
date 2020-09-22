@@ -32,7 +32,7 @@ We can only consider a few things at a time. If a piece is intertwined with anot
 
 Ignoring complexity slows you in the long haul.
 
-![Simple vs Easy](/img/social/simple_vs_easy.png)
+<img src="/img/social/simple_vs_easy.png" alt="Simple vs easy">
 
 The simple route is slower at the beginning because it requires thought.
 
@@ -59,7 +59,6 @@ Modularity = simplicity; when we limit what those modules are allowed to think a
 
 *Simplicity is the ultimate sophistication* - Da Vinci
 
-
 ## Simple made easy
 
 * Chose simple constructs over  complexity-generating constructs.
@@ -69,9 +68,7 @@ Modularity = simplicity; when we limit what those modules are allowed to think a
 * Simplicity often means making more things, not fewer. 
 
 
-
 ## The simplicity toolkit
-
 
 |Construct|Get via|
 |:--:|:--:|
