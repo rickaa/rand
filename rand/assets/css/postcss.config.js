@@ -7,16 +7,9 @@ module.exports = {
         }),
         require('tailwindcss')('./assets/css/tailwind.config.js'),
         require('autoprefixer')({
-            grid: true,
             overrideBrowserslist: ['>1%']
         }),
-        purgecss({
-            content: [
-                "./layouts/**/*.html"
-            ],
-            defaultExtractor: content => content.match(/[\w-/.:]+(?<!:)/g) || []
-            // defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-        }),
-        require("postcss-preset-env")
+        require('postcss-preset-env')({stage: 1}),
+        require('postcss-nested'),
     ]
 }
