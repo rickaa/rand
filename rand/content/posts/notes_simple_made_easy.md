@@ -32,7 +32,7 @@ We can only consider a few things at a time. If a piece is intertwined with anot
 
 Ignoring complexity slows you in the long haul.
 
-![](/static/img/social/simple_vs_easy.png)
+![Simple vs easy](https://github.com/polyrand/rand/raw/minimal2/rand/static/img/social/simple_vs_easy.png)
 
 The simple route is slower at the beginning because it requires thought.
 
