@@ -32,7 +32,7 @@ We can only consider a few things at a time. If a piece is intertwined with anot
 
 Ignoring complexity slows you in the long haul.
 
-![](https://ricardoanderegg.com/img/social/simple_vs_easy.png)
+![Simple vs Easy](/img/social/simple_vs_easy.png)
 
 The simple route is slower at the beginning because it requires thought.
 
@@ -47,15 +47,18 @@ Benefits of simplicity:
 
 
 Complect = interleave, entwine, braid.
+
 Compose = place together.
 
 Modularity != simplicity. Partition and stratification (modularity) != simplicity.
+
 Modularity = simplicity; when we limit what those modules are allowed to think about.
 
 *Programming, when stripped of all its circumstantial irrelevancies, boils down to no more and no less than **very effective thinking** so as to avoid unmastered complexity, to very vigorous separation of your many different concerns* - Dijkstra
 
 
 *Simplicity is the ultimate sophistication* - Da Vinci
+
 
 ## Simple made easy
 
@@ -66,7 +69,9 @@ Modularity = simplicity; when we limit what those modules are allowed to think a
 * Simplicity often means making more things, not fewer. 
 
 
+
 ## The simplicity toolkit
+
 
 |Construct|Get via|
 |:--:|:--:|
