@@ -74,6 +74,7 @@
     a img {
       @apply border-none;
     }
+
     img {
       @apply block max-w-full mx-auto mt-4 mb-4;
     }
