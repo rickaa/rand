@@ -6,10 +6,6 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
         themeDir + 'layouts/**/*.html',
         themeDir + 'static/**/*.js',
         themeDir + 'layouts/**/*.js',
-
-
-
-
         // etc.
     ],
 
