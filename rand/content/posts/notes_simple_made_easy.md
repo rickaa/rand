@@ -32,9 +32,7 @@ We can only consider a few things at a time. If a piece is intertwined with anot
 
 Ignoring complexity slows you in the long haul.
 
-
-{{< figure src="/img/social/simple_vs_easy.png" title="Simple vs easy" >}}
-<!--<img src="" alt="">-->
+![Simple vs easy](/img/social/simple_vs_easy.png)
 
 The simple route is slower at the beginning because it requires thought.
 
