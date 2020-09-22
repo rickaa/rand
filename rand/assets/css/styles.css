@@ -66,6 +66,10 @@
     hr {
       @apply block h-1 p-0 mt-4 border-0 border-t-2;
     }
+
+    figcaption h4 {
+        @apply text-base
+    }
     
     a img {
       @apply border-none;
