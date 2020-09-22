@@ -52,7 +52,11 @@
     h5,
     h6 {
       color: #424242;
-      @apply my-10 font-medium leading-5;
+      @apply font-medium leading-5;
+    }
+
+    .markdown h2 {
+        @apply my-10;
     }
     
     html,
