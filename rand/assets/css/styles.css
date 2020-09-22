@@ -1,218 +1,219 @@
 /* @import "main"; */
 /* Base - Variables: tailwind-config.js */
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@layer base {
-    body {
-      font-family: "Inter", sans-serif;
-      /* maybe leading loose */
-      @apply text-lg font-normal leading-relaxed text-gray-900 bg-gray-100;
-    }
-    
-    h1 {
-      @apply text-5xl;
-    }
-    h2 {
-      @apply text-4xl;
-    }
-    h3 {
-      @apply text-3xl;
-    }
-    
-    h4 {
-      @apply text-2xl;
-    }
-    
-    h5 {
-      @apply text-xl;
-    }
-    
-    h6 {
-      @apply text-lg;
-    }
-    
-    a {
-      @apply text-gray-900 underline break-words;
-    }
-
-    li {
-        @apply mb-1;
-    }
-    
-    a:hover {
-      @apply border-gray-900;
-    }
-    
-    li h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      color: #424242;
-      @apply font-medium leading-5;
-    }
-
-    .markdown h2 {
-        @apply my-10;
-    }
-    
-    html,
-    button,
-    input,
-    select,
-    textarea {
-      color: #424242;
-    }
-    
-    hr {
-      @apply block h-1 p-0 mt-4 border-0 border-t-2;
-    }
-
-    figcaption h4 {
-        @apply text-base
-    }
-    
-    a img {
-      @apply border-none;
-    }
-
-    img {
-      @apply block max-w-full mx-auto mt-4 mb-4;
-    }
-    
-    figure {
-      @apply m-0 text-center;
-    }
-    
-    fieldset {
-      @apply p-0 m-0 border-0;
-    }
-    
-    table {
-      -ms-overflow-style: -ms-autohiding-scrollbar;
-      -webkit-overflow-scrolling: touch;
-      background-color: transparent;
-      margin-bottom: 1rem;
-      overflow-x: auto;
-      width: 100%;
-    }
-    
-    table th,
-    table td {
-      border-bottom: 1px solid #dee2e6;
-      padding: 0.75rem;
-      vertical-align: top;
-    }
-    
-    table thead th {
-      border-bottom: 2px solid #dee2e6;
-      vertical-align: bottom;
-    }
-    
-    table tbody + tbody {
-      border-top: 2px solid #dee2e6;
-    }
-    
-    table tbody tr:nth-of-type(even) {
-      background-color: rgba(0, 0, 0, 0.15);
-    }
-    
-    table th {
-      background-color: #212529;
-      border-color: #32383e;
-      color: rgb(170, 170, 170);
-    }
-    
-    p {
-      @apply my-6;
-    }
-    
-    p code {
-      @apply p-1 overflow-x-auto font-mono bg-orange-100;
-    }
-    
-    .highlight pre {
-      @apply p-2 pl-4 my-8 overflow-x-auto;
-    }
-    
-    .highlight {
-      @apply overflow-x-auto;
-    }
-    
-    /* pre code {
-      @apply p-2 font-mono bg-red-200;
-    } */
-    
-    textarea {
-      resize: vertical;
-    }
-    
-    blockquote {
-      margin-left: 1rem;
-      font-style: italic;
-      font-size: 1.4rem;
-      font-family: Georgia, bitstream charter, serif;
-      border-left: 3px solid;
-      border-color: #424242;
-      padding-left: 20px;
-    }
-    
-    blockquote cite {
-      font-size: 70%;
-      opacity: 0.8;
-    }
-    
-    blockquote em {
-      font-weight: 600;
-    }
-    
-    ul {
-      @apply pl-3 list-disc list-inside;
-    }
-    
-    pre {
-      @apply p-1 overflow-x-auto;
-    }
-    
-    @media (max-width: 900px) {
-      body {
-        padding: 20px;
-      }
-    
-      h1 {
-        font-size: 1.8rem;
-      }
-    
-      h2 {
-        font-size: 1.6rem;
-      }
-    
-      h3 {
-        font-size: 1.2rem;
-      }
-    
-      h4 {
-        font-size: 1rem;
-        font-weight: 500;
-      }
-    
-      .header .nav.social li {
-        margin: 0;
-      }
-      .header .nav li {
-        margin: 0 10px 0 0;
-        font-size: 14px;
-      }
-    
-      table {
-        -ms-overflow-style: -ms-autohiding-scrollbar;
-        -webkit-overflow-scrolling: touch;
-        display: block;
-        overflow-x: auto;
-        width: 100%;
-      }
-    }
+/* purgecss start ignore */
+body {
+  font-family: "Inter", sans-serif;
+  /* maybe leading loose */
+  @apply text-lg font-normal leading-relaxed text-gray-900 bg-gray-100;
 }
+
+h1 {
+  @apply text-5xl;
+}
+h2 {
+  @apply text-4xl;
+}
+h3 {
+  @apply text-3xl;
+}
+
+h4 {
+  @apply text-2xl;
+}
+
+h5 {
+  @apply text-xl;
+}
+
+h6 {
+  @apply text-lg;
+}
+
+a {
+  @apply text-gray-900 underline break-words;
+}
+
+li {
+    @apply mb-1;
+}
+
+a:hover {
+  @apply border-gray-900;
+}
+
+li h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #424242;
+  @apply my-2 font-medium leading-5;
+}
+
+.markdown h2 {
+    @apply my-10;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #424242;
+}
+
+hr {
+  @apply block h-1 p-0 mt-4 border-0 border-t-2;
+}
+
+figcaption h4 {
+    @apply text-base
+}
+
+a img {
+  @apply border-none;
+}
+
+img {
+  @apply block max-w-full mx-auto mt-4 mb-4;
+}
+
+figure {
+  @apply m-0 text-center;
+}
+
+fieldset {
+  @apply p-0 m-0 border-0;
+}
+
+table {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  -webkit-overflow-scrolling: touch;
+  background-color: transparent;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+  width: 100%;
+}
+
+table th,
+table td {
+  border-bottom: 1px solid #dee2e6;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+table thead th {
+  border-bottom: 2px solid #dee2e6;
+  vertical-align: bottom;
+}
+
+table tbody + tbody {
+  border-top: 2px solid #dee2e6;
+}
+
+table tbody tr:nth-of-type(even) {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+table th {
+  background-color: #212529;
+  border-color: #32383e;
+  color: rgb(170, 170, 170);
+}
+
+p {
+  @apply my-6;
+}
+
+p code {
+  @apply p-1 overflow-x-auto font-mono bg-orange-100;
+}
+
+.highlight pre {
+  @apply p-2 pl-4 my-8 overflow-x-auto;
+}
+
+.highlight {
+  @apply overflow-x-auto;
+}
+
+/* pre code {
+  @apply p-2 font-mono bg-red-200;
+} */
+
+textarea {
+  resize: vertical;
+}
+
+blockquote {
+  margin-left: 1rem;
+  font-style: italic;
+  font-size: 1.4rem;
+  font-family: Georgia, bitstream charter, serif;
+  border-left: 3px solid;
+  border-color: #424242;
+  padding-left: 20px;
+}
+
+blockquote cite {
+  font-size: 70%;
+  opacity: 0.8;
+}
+
+blockquote em {
+  font-weight: 600;
+}
+
+ul {
+  @apply pl-3 list-disc list-inside;
+}
+
+pre {
+  @apply p-1 overflow-x-auto;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .header .nav.social li {
+    margin: 0;
+  }
+  .header .nav li {
+    margin: 0 10px 0 0;
+    font-size: 14px;
+  }
+
+  table {
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+/* purgecss end ignore */

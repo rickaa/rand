@@ -5,6 +5,10 @@ module.exports = {
             whitelist: [],
         }
     },
+    future: {
+        removeDeprecatedGapUtilities: true,
+        purgeLayersByDefault: true,
+    },
     theme: {
         extend: {
             colors: {

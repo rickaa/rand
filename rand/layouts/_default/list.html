@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-{{ partial "header.html" . }}
+{{ partial "head.html" . }}
 <body>
 	<div class="max-w-3xl m-auto mt-4 align-middle sm:mt-8">
-        {{ partial "head.html" . }}
+        {{ partial "header.html" . }}
         <div class="justify-center block align-middle">
 		    {{ if isset .Data "Term" }}
 		    	<h2>{{ .Data.Term }}</h2>
