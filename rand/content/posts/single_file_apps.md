@@ -21,17 +21,17 @@ However, even if you don't (or can't) use notebooks, I believe there are other m
 
 This had me thinking about other side benefits of the approach. Deployment and management becomes easier. Just one file (plus maybe the config) to copy around. You can also exploit this to practice literate programming, at least with documentation. That can leave you wondering, *"But how do you?"*:
 
-* Find symbols.
+**Find symbols.**
 
-  Ctrl/Cmd + F. Also, finding all the symbols in a single file can be faster than making the IDE traverse a tree of files and folders.
+Ctrl/Cmd + F. Also, finding all the symbols in a single file can be faster than making the IDE traverse a tree of files and folders.
   
-* Organize the app.
+**Organize the app.**
 
-  I include comments with a specific pattern to separate sections like: `## ¡¡ settings`. With tools like [ripgrep](https://github.com/BurntSushi/ripgrep) inside the IDE, finding them is instant.
+I include comments with a specific pattern to separate sections like: `## ¡¡ settings`. With tools like [ripgrep](https://github.com/BurntSushi/ripgrep) inside the IDE, finding them is instant.
   
-* Do literate programming.
+**Do literate programming.**
 
-  This is my favorite part. I structure the app like a book. The first part is usually the settings, then resource initialization, followed by utility functions, crud functions, views, etc. Everything in the app relies on something written above itself. Add comments into the mix as literate explanations of what you are doing. Now you have a file, probably with a few 1000s lines of code, that you can read top-to-bottom and understand everything that is going on. If you have a problem, the fix will be in, or above the line causing it.
+This is my favorite part. I structure the app like a book. The first part is usually the settings, then resource initialization, followed by utility functions, crud functions, views, etc. Everything in the app relies on something written above itself. Add comments into the mix as literate explanations of what you are doing. Now you have a file, probably with a few 1000s lines of code, that you can read top-to-bottom and understand everything that is going on. If you have a problem, the fix will be in, or above the line causing it.
   
 The final folder layout of the app is somewhat easier to navigate. Many times I've found myself wanting to explore an open source app. Then I found 10s of files with a single class or function inside, making it hard to understand everything fast.
 
