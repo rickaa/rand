@@ -78,9 +78,7 @@ Example organization of a simple CRUD app:
 ├── docker-compose.yml
 ├── gunicorn_conf.py
 ├── requirements
-│   ├── dev.in
 │   ├── dev.txt
-│   ├── main.in
 │   └── main.txt
 ...
 ```
@@ -96,11 +94,8 @@ Same app in a single file. All the resources (html templates, js files, images, 
 ├── gunicorn_conf.py
 ├── main.py
 ├── requirements
-│   ├── dev.in
 │   ├── dev.txt
-│   ├── main.in
-│   ├── main.txt
-│   └── main_l.txt
+│   └── main.txt
 ...
 ```
 
