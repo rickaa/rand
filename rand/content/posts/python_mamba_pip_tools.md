@@ -157,7 +157,7 @@ ERROR: Could not find a version that satisfies the requirement torch==1.7.1+cpu
 ERROR: No matching distribution found for torch==1.7.1+cpu
 ```
 
-It can't find the appropriate version. The solution for this is using the `--find-link` flag.
+It can't find the appropriate version. The solution for this is using the `--find-links` flag.
 
 Thanks to [this Stack Overflow answer](https://stackoverflow.com/a/61742742) I learned how to specify that inside a `requirements.txt/.in` file:
 
