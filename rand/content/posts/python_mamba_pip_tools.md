@@ -3,7 +3,7 @@ title = "Managing Python environments with mamba and pip-tools"
 date = "2021-01-25"
 author = "Ricardo"
 tags = ["conda", "environment", "python", "mamba", "pip-tools", "docker"]
-thumbnail = "img/social/conda_management.jpg"
+thumbnail = "img/social/python_mamba_pip.jpg"
 +++
 
 
