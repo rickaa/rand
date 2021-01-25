@@ -204,10 +204,10 @@ import subprocess
 # load our original requirements.in files
 # split and clean it
 r = [s.strip() for s in Path("requirements.in").read_text().split("\n") if s != ""]
-# ['numpy', 'pandas', 'fastapi', 'pytorch', 'torchvision']
+# ['numpy', 'pandas', 'fastapi', 'torch', 'torchvision']
 
 pat = re.compile("|".join(r))
-# re.compile(r'numpy|pandas|fastapi|pytorch|torchvision', re.UNICODE)
+# re.compile(r'numpy|pandas|fastapi|torch|torchvision', re.UNICODE)
 
 env_dict = yaml.full_load(
     subprocess.run(
@@ -261,7 +261,7 @@ RUN wget -qO- https://micromamba.snakepit.net/api/micromamba/linux-64/latest | t
         ./micromamba shell init -s bash -p ~/micromamba
 
 COPY ./docker_env.yaml .
-RUN micromamba create -f ./env.yaml -y
+RUN micromamba create -f ./docker_env.yaml -y
 
 ENTRYPOINT micromamba activate tester && python -c "import torch; print('success!')"
 ```
