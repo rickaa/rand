@@ -169,7 +169,7 @@ torch
 torchvision
 ```
 
-However, that won't give is the versions with `+cpu`. We can try:
+However, that won't give us the versions with `+cpu`. We can try:
 
 ```
 # requirements.in
@@ -284,7 +284,7 @@ Ok. Little detour. I cancelled the building of that Dockerfile. Here I started g
 
 When I teach Python courses I repeat the same thing over and over, *"Programming is more about searching for the correct information than knowing the syntax by heart"*. Well, now I'm telling that to myself too.
 
-Anyway, getting back to what we were doing, I need to find a way to automate this. We know that `pip-compile` kind of works, we are just missing `+cpu` at the end of each dependency, why don't we use python again?
+Anyway, getting back to what we were doing, we need to find a way to automate this. We know that `pip-compile` kind of works, we are just missing `+cpu` at the end of each dependency, why don't we use python again?
 
 ```python
 # cpu_fixer.py
