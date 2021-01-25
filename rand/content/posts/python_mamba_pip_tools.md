@@ -335,16 +335,16 @@ RUN pip install -r requirements.txt
 ENTRYPOINT python -c "import torch; print('working!!')"
 ```
 
-IT'S WORKING!! Sorry for the euphoria, when I started writing about this I didn't think it would take me.
+IT'S WORKING!! Sorry for the euphoria, when I started writing about this I didn't think it would take me so much time.
 
 **What we learned:**
 
 * Use whatever you want to create your environment
 * Mamba is amazing!
-* Pip-tools is amazing! The good thing about pip-tools is that it does not "locks" you into any dependency manager, we can use conda/mamba and then compile the requirements with pip-tools so that we can just `pip install` in our Dockerfile.
+* Pip-tools is amazing! The good thing about pip-tools is that it does not "lock" you into any dependency manager, we can use conda/mamba and then compile the requirements with pip-tools so that we can just `pip install` in our Dockerfile.
 * Searching for open GitHub issues before spending hours trying 100 things is highly recommended.
 
 
 # About the workflow
 
-This article was initially about workflows. As I said, now I use venv + pip-tools, but I'm enjoying using mamba to manage local environments. Now I'm also using [pyenv](https://github.com/pyenv/pyenv) to manage Python versions. If I move to mamba I won't need pyenv.
+This article was initially about workflows. As I said, now I use venv + pip-tools, but I'm enjoying using mamba to manage local environments. Now I'm also using [pyenv](https://github.com/pyenv/pyenv) to manage Python versions. With mamba you don't need pyenv.
