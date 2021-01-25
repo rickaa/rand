@@ -311,7 +311,19 @@ That script will replace `torch==1.7.1` with `torch==1.7.1+cpu` and `torchvision
 Just kidding, we can do it better like this:
 
 ```python
+import re
+from pathlib import Path
+from sys import argv
 
+requirements = argv[1]
+data = Path(requirements).read_text()
+
+fixed = re.sub(
+    r"^(torch\w*==[\d|\.]+)\b", lambda x: x.group(0) + "+cpu", data, flags=re.MULTILINE,
+)
+
+
+Path(requirements).write_text(fixed)
 ```
 
 Let's try now, I've modified the entrypoint of the Dockerfile to import torch instead of numpy:
