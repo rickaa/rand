@@ -2,6 +2,7 @@ baseurl = "https://ricardoanderegg.com/"
 languageCode = "en-US"
 title = "rand[om]"
 locale = "en"
+enableRobotsTXT = true
 
 
 pygmentsstyle = "vs"
