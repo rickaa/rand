@@ -34,80 +34,80 @@ command = "hugo --gc"
 
 
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/python_mamba_pip_tools"
-    to = "https://ricardoanderegg.com/posts/python-manage-environments-with-mamba-pip-tools"
+    from = "/posts/python_mamba_pip_tools/"
+    to = "/posts/python-manage-environments-with-mamba-pip-tools/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/single_file_apps"
-    to = "https://ricardoanderegg.com/posts/write-apps-in-single-file"
+    from = "/posts/single_file_apps/"
+    to = "/posts/write-apps-in-single-file/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/notes_simple_made_easy"
-    to = "https://ricardoanderegg.com/posts/notes-simple-made-easy-rich-hickey"
+    from = "/posts/notes_simple_made_easy/"
+    to = "/posts/notes-simple-made-easy-rich-hickey/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/bash_wrap_functions"
-    to = "https://ricardoanderegg.com/posts/wrap-bash-code-functions"
+    from = "/posts/bash_wrap_functions/"
+    to = "/posts/wrap-bash-code-functions/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/conda_management"
-    to = "https://ricardoanderegg.com/posts/python-manage-conda-environments"
+    from = "/posts/conda_management/"
+    to = "/posts/python-manage-conda-environments/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/fixing_ghcup_bug"
-    to = "https://ricardoanderegg.com/posts/fixing-ghcup-bug"
+    from = "/posts/fixing_ghcup_bug/"
+    to = "/posts/fixing-ghcup-bug/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/divide_search_abstract"
-    to = "https://ricardoanderegg.com/posts/problem-solving-divide-search-abstract"
+    from = "/posts/divide_search_abstract/"
+    to = "/posts/problem-solving-divide-search-abstract/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/langid_fasttext"
-    to = "https://ricardoanderegg.com/posts/python-fast-language-identification-fasttext"
+    from = "/posts/langid_fasttext/"
+    to = "/posts/python-fast-language-identification-fasttext/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/notebook_linking"
-    to = "https://ricardoanderegg.com/posts/python-jupyter-link-local-notebook"
+    from = "/posts/notebook_linking/"
+    to = "/posts/python-jupyter-link-local-notebook/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/posts/black_jupyter"
-    to = "https://ricardoanderegg.com/posts/black-formatting-jupyter-notebook"
-    status = 303
-    force = false
-
-[[redirects]]
-    from = "https://ricardoanderegg.com/thoughts/short_posts"
-    to = "https://ricardoanderegg.com/thoughts/write-short-blog-posts"
-    status = 303
-    force = false
-[[redirects]]
-    from = "https://ricardoanderegg.com/thoughts/education_before_innovation"
-    to = "https://ricardoanderegg.com/thoughts/education-before-innovation"
+    from = "/posts/black_jupyter/"
+    to = "/posts/black-formatting-jupyter-notebook/"
     status = 303
     force = false
 
 [[redirects]]
-    from = "https://ricardoanderegg.com/recipes/remote_docker_control_ssh"
-    to = "https://ricardoanderegg.com/recipes/remote-manage-docker-with-ssh"
+    from = "/thoughts/short_posts/"
+    to = "/thoughts/write-short-blog-posts/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/recipes/secure_docker_root_local_files"
-    to = "https://ricardoanderegg.com/recipes/local-files-permissions-docker-non-root-security"
+    from = "/thoughts/education_before_innovation/"
+    to = "/thoughts/education-before-innovation/"
+    status = 303
+    force = false
+
+[[redirects]]
+    from = "/recipes/remote_docker_control_ssh/"
+    to = "/recipes/remote-manage-docker-with-ssh/"
     status = 303
     force = false
 [[redirects]]
-    from = "https://ricardoanderegg.com/recipes/langid_fasttext"
-    to = "https://ricardoanderegg.com/recipes/python-fast-language-identification-fasttext"
+    from = "/recipes/secure_docker_root_local_files/"
+    to = "/recipes/local-files-permissions-docker-non-root-security/"
+    status = 303
+    force = false
+[[redirects]]
+    from = "/recipes/langid_fasttext/"
+    to = "/recipes/python-fast-language-identification-fasttext/"
     status = 303
     force = false
 
