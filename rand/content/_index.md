@@ -12,7 +12,5 @@ I am also very active on [Twitter](https://twitter.com/ricardoanderegg).
 There are 3 places you can go in this website:
 
 * [Code](https://ricardoanderegg.com/posts/): Blog posts related to software development.
-* [Think](https://ricardoanderegg.com/thoughts/): Blog posts related to education, medicine, life,
-    sports or whatever comes to my mind.
-* [Recipes](https://ricardoanderegg.com/recipes/): Micro blog posts showing commented code snippets
-    that will help you get things done.
+* [Think](https://ricardoanderegg.com/thoughts/): Blog posts related to education, medicine, life, sports or whatever comes to my mind.
+* [Recipes](https://ricardoanderegg.com/recipes/): Micro blog posts showing commented code snippets that will help you get things done.
