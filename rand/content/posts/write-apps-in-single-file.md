@@ -1,7 +1,7 @@
 +++
 title = "Single file applications"
 date = "2020-11-03"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["python"]
 tags = ["python", "api", "fastapi", "monolith"]
 thumbnail = "img/social/building_ricardo_gomez_angel_unsplash.jpg"

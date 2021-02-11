@@ -1,7 +1,7 @@
 +++
 title = "Conda management"
 date = "2020-02-21"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["conda", "environments"]
 tags = ["conda", "environment", "python"]
 thumbnail = "img/social/conda_management.jpg"

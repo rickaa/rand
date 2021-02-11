@@ -1,7 +1,7 @@
 +++
 title = "Black ❤ Jupyter"
 date = "2019-07-22"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["tips", "formatting", "pandas"]
 tags = ["pandas", "formatting", "black", "code", "comprehension", "list"]
 +++

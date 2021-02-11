@@ -1,7 +1,7 @@
 +++
 title = "Short posts"
 date = "2020-07-31"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["thoughts", "information"]
 tags = ["thoughts", "information", "short", "blogs"]
 thumbnail = "img/social/short.png"

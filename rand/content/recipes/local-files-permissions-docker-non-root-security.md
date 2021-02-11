@@ -1,7 +1,7 @@
 +++
 title = "Run your containers as non-root"
 date = "2020-07-22"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["docker", "security"]
 tags = ["docker", "security", "root"]
 thumbnail = "img/social/docker_sec.png"

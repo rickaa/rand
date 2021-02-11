@@ -1,7 +1,7 @@
 +++
 title = "Divide ➗ Search 🔍 Abstract 🔭"
 date = "2019-11-28"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["tips", "problem", "solving", "abstraction", "thinking"]
 tags = ["problem", "solving", "abstraction", "thinking"]
 +++

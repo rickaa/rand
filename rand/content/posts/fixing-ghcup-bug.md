@@ -1,7 +1,7 @@
 +++
 title = "Fixing a bug in the Haskell installer"
 date = "2020-01-16"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["open source", "haskell", "bugs"]
 tags = ["haskell", "ghcup", "open source", "git", "gitlab", "github"]
 +++

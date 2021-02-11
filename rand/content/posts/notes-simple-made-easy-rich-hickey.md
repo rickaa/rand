@@ -1,7 +1,7 @@
 +++
 title = "Notes on Simple Made Easy"
 date = "2020-09-22"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["notes"]
 tags = ["notes", "personal", "simplicity"]
 thumbnail = "img/social/simple_vs_easy.png"

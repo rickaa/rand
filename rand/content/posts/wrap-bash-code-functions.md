@@ -1,7 +1,7 @@
 +++
 title = "Put your bash code in functions"
 date = "2020-06-16"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["bash"]
 tags = ["bash", "scripting", "parallel"]
 thumbnail = "img/social/bash_function.png"

@@ -1,7 +1,7 @@
 +++
 title = "Language identification with fastText"
 date = "2019-08-20"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["nlp", "fasttext", "language"]
 tags = ["fasttext", "nlp", "text", "language", "identification", "classification"]
 +++

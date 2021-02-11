@@ -1,7 +1,7 @@
 +++
 title = "Connect to remote docker host via SSH."
 date = "2020-07-29"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["docker"]
 tags = ["docker", "remote", "ssh"]
 thumbnail = "img/social/connections1.jpg"

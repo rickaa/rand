@@ -1,7 +1,7 @@
 +++
 title = "Linking notebooks"
 date = "2019-07-25"
-author = "Ricardo"
+author = "Ricardo Ander-Egg Aguilar"
 categories = ["tips", "jupyter", "notebook", "trick"]
 tags = ["jupyter", "notebook", "trick"]
 +++
