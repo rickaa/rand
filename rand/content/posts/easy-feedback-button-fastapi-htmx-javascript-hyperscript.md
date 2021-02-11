@@ -58,7 +58,7 @@ function getFeedback() {
         const data = {msg: message};
 
         fetch('/feedback_prompt', {
-            method: 'POST', // or 'PUT'
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
