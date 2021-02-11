@@ -1,6 +1,6 @@
 +++
 title = "Create a vanishing feedback button with FastAPI and hyperscript"
-date = "2021-11-02"
+date = "2021-02-11"
 author = "Ricardo Ander-Egg Aguilar"
 tags = ["web", "fastapi", "javascript", "htmx", "feedback", "hyperscript", "button", "webapp"]
 thumbnail = "img/social/feedback_btn.jpg"
