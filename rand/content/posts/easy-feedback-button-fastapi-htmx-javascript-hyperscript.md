@@ -84,7 +84,7 @@ app = FastAPI()
 # whatever you want to do with the feedback message
 # save to the database, send to telegram, slack, email...
 def notify(message: str):
-return message
+	return message
 
 class FeedBackPrompData(BaseModel):
     msg: str
@@ -94,7 +94,6 @@ class FeedBackPrompData(BaseModel):
 async def feedback_post(data: FeedBackPrompData):
 
     content = f"Feeback from drwn.io:\n\n{data.msg}"
-
     notify(content)
 
     return
