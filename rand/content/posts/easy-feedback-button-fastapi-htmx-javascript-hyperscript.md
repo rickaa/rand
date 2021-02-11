@@ -23,12 +23,12 @@ The first thing we need is an html button, it's styled using Tailwind CSS. Notic
 And now our HTML button with hyperscript:
 
 ```html
-          <div id="get-feedback-div" class="inline-flex ml-3 shadow rounded-md transition-opacity duration-500 ease-in">
-            <button id="get-feedback-button" _="on click call getFeedback() then set #get-feedback-button.innerText to 'Thank you!' then wait 1000ms then toggle .opacity-0 on #get-feedback-div then wait 600ms then toggle .hidden on #get-feedback-div"
+<div id="get-feedback-div" class="inline-flex ml-3 shadow rounded-md transition-opacity duration-500 ease-in">
+	<button id="get-feedback-button" _="on click call getFeedback() then set #get-feedback-button.innerText to 'Thank you!' then wait 1000ms then toggle .opacity-0 on #get-feedback-div then wait 600ms then toggle .hidden on #get-feedback-div"
             class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-blue-600 bg-white border border-transparent rounded-md hover:bg-blue-50">
               Give us feedback
-            </button>
-          </div>
+	</button>
+</div>
 ```
 
 We can go step-by-step with hyperscript:
