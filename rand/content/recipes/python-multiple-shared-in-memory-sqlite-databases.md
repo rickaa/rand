@@ -11,12 +11,14 @@ This works only in the same Python process, you can't share an in-memory SQLite 
 ```python
 import sqlite3
 
-# 3 connections to the same in-memory database (DB1)
+# NOTE: you need to use uri=True
+
+# 3 connections to the same in-memory database (DB1 / memdb1)
 DB1_1 = sqlite3.connect("file:memdb1?mode=memory&cache=shared", uri=True)
 DB1_2 = sqlite3.connect("file:memdb1?mode=memory&cache=shared", uri=True)
 DB1_3 = sqlite3.connect("file:memdb1?mode=memory&cache=shared", uri=True)
 
-# 2 connections to a *new* in-memory database (DB2)
+# 2 connections to a *new* in-memory database (DB2 / memdb2)
 DB2_1 = sqlite3.connect("file:memdb2?mode=memory&cache=shared", uri=True)
 DB2_2 = sqlite3.connect("file:memdb2?mode=memory&cache=shared", uri=True)
 
