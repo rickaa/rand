@@ -1,5 +1,5 @@
 +++
-title = "How to have multiple shared in-memory SQLite databases in Python"
+title = "How to use multiple shared in-memory SQLite databases in Python"
 date = "2021-02-16"
 author = "Ricardo Ander-Egg Aguilar"
 categories = ["databases", "python", "sqlite"]
