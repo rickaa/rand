@@ -6,8 +6,6 @@ tags = ["software engineering", "bloom filters", "python", "hash"]
 thumbnail = "img/social/bloom_filter.jpg"
 +++
 
-# Bloom filters
-
 ## What is a Bloom Filter
 
 A Bloom filter is a probabilistic data structure. It tells you if an element is in a set or not in a very fast and memory-efficient way. A Bloom filter can tell if an element **is not in** the set ("being 100% sure") or that **it may be in** the set, but not "being 100% sure". It only has 2 operations: `add`, to add an element, and `query`, to check if an element exists in the set or not.
