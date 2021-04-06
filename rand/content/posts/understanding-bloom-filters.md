@@ -10,6 +10,10 @@ thumbnail = "img/social/bloom_filter.jpg"
 
 A Bloom filter is a probabilistic data structure. It tells you if an element is in a set or not in a very fast and memory-efficient way. A Bloom filter can tell if an element **is not in** the set ("being 100% sure") or that **it may be in** the set, but not "being 100% sure". It only has 2 operations: `add`, to add an element, and `query`, to check if an element exists in the set or not.
 
+## Why are they useful?
+
+Bloom filters are some kind of data compressing. With them, you can check if an element exists in a set, but using a lot less space than if you had to store the complete dataset. For example, your browser may check if the URL you are trying to visit is a malicious one. You can use a bloom filter instead of storing all the URLs, when a user tries to visit a page, it checks if the URL is inside the set using a Bloom filter (set of malicious URLs). If the answer is `False` (remember, that's with 100% probability), we can safely let the user visit that page.
+
 ## How does a Bloom filter work?
 
 First, we need a Bit Vector. That Bit Vector will hold the information about or data. We must decide how big/long the vector will be (we will explain more about this later). We will call the vector size: `length`, and we will use a `length = 10`.
