@@ -12,7 +12,7 @@ thumbnail = "img/social/bloom_filter.jpg"
 
 A Bloom filter is a probabilistic data structure. It tells you if an element is in a set or not in a very fast and memory-efficient way. A Bloom filter can tell if an element **is not in** the set ("being 100% sure") or that **it may be in** the set, but not "bein 100% sure". It only has 2 operations: `add`, to add an element, and `query`, to check if an element exists in the set or not.
 
-# How does a Bloom filter work?
+## How does a Bloom filter work?
 
 First, we need a Bit Vector. That Bit Vector will hold the information about or data. We must decide how big/long the vector will be (we will explain more about this later). We will call the vector size: `length`, and we will use a `length = 10`.
 
@@ -380,7 +380,7 @@ def proba_false_positive(set_length, vector_length, num_hash_functions):
     return (1 - (1 - (1 / m)) ** (k * n)) ** k
 ```
 
-With that formula, for a set of size `n`, we can derive the number `k` of hashing functions and the length `m` of a vector to use if we want to have a false positive probability $$P_{F P}$$.
+With that formula, for a set of size `n`, we can derive the number `k` of hashing functions and the length `m` of a vector to use if we want to have a false positive probability \\(P_{F P}\\).
 
 
 $$k = -\frac{\ln{P_{FP}}}{\ln{2}}$$
@@ -428,11 +428,11 @@ we need a bloom filter with a vector length = {m} and use {k} hash functions.
     we need a bloom filter with a vector length = 57510351 and use 10 hash functions.
 
 
-Now we know how to make our bloom filters a bit better. We can add some parameters to our `BloomFilter` class so that we can tune it to our requirements. But we still have another problem. We can now calculate how many hash functions we need, but so far we have manually given our bloom filter a list of hash functions. We need some way to generate as many hash functions as we need. In [this paper](https://www.eecs.harvard.edu/~michaelm/postscripts/rsa2008.pdf) the authors prove that we can generate any number of hash functions $$g_{i}(x)$$ by just using 2 functions.
+Now we know how to make our bloom filters a bit better. We can add some parameters to our `BloomFilter` class so that we can tune it to our requirements. But we still have another problem. We can now calculate how many hash functions we need, but so far we have manually given our bloom filter a list of hash functions. We need some way to generate as many hash functions as we need. In [this paper](https://www.eecs.harvard.edu/~michaelm/postscripts/rsa2008.pdf) the authors prove that we can generate any number of hash functions \\(g_{i}(x)\\) by just using 2 functions.
 
 $$g_{i}(x)=h_{1}(x)+i h_{2}(x)$$
 
-Where $$i$$ goes from `0` to `k - 1` (remember `k` is the number of hash functions that we need to generate).
+Where \\(i\\) goes from `0` to `k - 1` (remember `k` is the number of hash functions that we need to generate).
 
 In Python it would be something like:
 
