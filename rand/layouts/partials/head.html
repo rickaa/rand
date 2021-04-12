@@ -81,10 +81,10 @@
  	 <link rel="stylesheet" href="{{ $styles.Permalink }}" data> 
 	{{ else }}
  	    {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
- 	    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
-        <script data-goatcounter="https://ricardo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-        <noscript>
-           <img src="https://ricardo.goatcounter.com/count?p=/test-img">
-        </noscript>
+ 	 <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+     <script data-goatcounter="https://ricardo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     <noscript>
+        <img src="https://ricardo.goatcounter.com/count?p=/test-img">
+     </noscript>
 	{{ end }}
 </head>
