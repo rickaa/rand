@@ -2,35 +2,35 @@
 publish = "public"
 command = "hugo --gc"
 
-[[redirects]]
-  from = "https://rand.netlify.com/post/*"
-  to = "https://ricardoanderegg.com/posts/:splat"
-  status = 301
-  force = true
+# [[redirects]]
+#   from = "https://rand.netlify.com/post/*"
+#   to = "https://ricardoanderegg.com/posts/:splat"
+#   status = 301
+#   force = true
 
-[[redirects]]
-  from = "https://rand.netlify.app/post/*"
-  to = "https://ricardoanderegg.com/posts/:splat"
-  status = 301
-  force = true
+# [[redirects]]
+#   from = "https://rand.netlify.app/post/*"
+#   to = "https://ricardoanderegg.com/posts/:splat"
+#   status = 301
+#   force = true
 
-[[redirects]]
-  from = "https://ricardoanderegg.com/post/*"
-  to = "https://ricardoanderegg.com/posts/:splat"
-  status = 301
-  force = true
+# [[redirects]]
+#   from = "https://ricardoanderegg.com/post/*"
+#   to = "https://ricardoanderegg.com/posts/:splat"
+#   status = 301
+#   force = true
 
-[[redirects]]
-  from = "https://rand.netlify.com/*"
-  to = "https://ricardoanderegg.com/:splat"
-  status = 301
-  force = true
+# [[redirects]]
+#   from = "https://rand.netlify.com/*"
+#   to = "https://ricardoanderegg.com/:splat"
+#   status = 301
+#   force = true
 
-[[redirects]]
-  from = "https://rand.netlify.app/*"
-  to = "https://ricardoanderegg.com/:splat"
-  status = 301
-  force = true
+# [[redirects]]
+#   from = "https://rand.netlify.app/*"
+#   to = "https://ricardoanderegg.com/:splat"
+#   status = 301
+#   force = true
 
 
 [[redirects]]
