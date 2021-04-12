@@ -78,11 +78,10 @@
 	{{- template "_internal/twitter_cards.html" . -}}
     {{ $styles := resources.Get "css/styles.css" | postCSS (dict "config" "./assets/css/postcss.config.js") | fingerprint }}
 	{{ if .Site.IsServer }}
- 	 <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}" data> 
+ 	 <link rel="stylesheet" href="{{ $styles.Permalink }}" data> 
 	{{ else }}
- 	    {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
-  
- 	 <link rel="stylesheet" href="{{ $styles.Permalink | relURL }}" integrity="{{ $styles.Data.Integrity }}">
+ 	    {{ $styles := $styles | minify | resources.PostProcess }}
+ 	 <link rel="stylesheet" href="{{ $styles.Permalink }}">
      <script data-goatcounter="https://ricardo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
      <noscript>
         <img src="https://ricardo.goatcounter.com/count?p=/test-img">
