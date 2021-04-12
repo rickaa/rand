@@ -3,6 +3,7 @@ languageCode = "en-US"
 title = "rand[om]"
 locale = "en"
 enableRobotsTXT = true
+# relativeURLs = true
 
 
 pygmentsstyle = "vs"
