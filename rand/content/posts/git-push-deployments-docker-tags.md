@@ -3,7 +3,7 @@ title = "Heroku-style deployments with Docker and git tags"
 date = "2021-04-25"
 author = "Ricardo Ander-Egg Aguilar"
 tags = ["software engineering", "git", "docker", "devops"]
-thumbnail = "img/social/bloom_filter.jpg"
+thumbnail = "img/social/git_push_prod.png"
 +++
 
 In this post I want to explain a new deployment method I came up with while working on [drwn.io](https://drwn.io). 
