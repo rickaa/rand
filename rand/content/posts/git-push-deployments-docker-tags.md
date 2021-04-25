@@ -51,7 +51,7 @@ production	root@[your server IP]:/root/gitrem (push)
 
 To execute something after a git action we can use [git hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks). Git hooks live in the `.git/hooks` folder. There are client-side hooks and server-side hooks. Client-side hooks run on the computer doing the action (your local computer). Server-side hooks run on the computer "receiving" the action (our remote server). We need to set up a `post-receive` hook. That hook will run after new code is pushed to the remote.
 
-**Some notes about the `post-receive` hook**: It can't stop the code from being pushed, and you'll stay connected to the remote server while it's executing (more on that later).
+**Some notes about the `post-receive` hook**: It can't stop the code from being pushed, and you'll stay connected to the remote server while it's executing.
 
 ## Our Docker images
 
