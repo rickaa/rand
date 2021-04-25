@@ -3,7 +3,7 @@ title = "Heroku-style deployments with Docker and git tags"
 date = "2021-04-25"
 author = "Ricardo Ander-Egg Aguilar"
 tags = ["software engineering", "git", "docker", "devops"]
-thumbnail = "img/social/git_push_prod.png"
+thumbnail = "img/social/bloom_filter.jpg"
 +++
 
 In this post I want to explain a new deployment method I came up with while working on [drwn.io](https://drwn.io). 
@@ -55,7 +55,7 @@ To execute something after a git action we can use [git hooks](https://git-scm.c
 
 ## Our Docker images
 
-Before going through our git hook, let me explain how the architecture looks. We have one load balancer/reverse proxy, I'll be using [Caddy](https://caddyserver.com/) here. Then we will be running 2 copies of our web backend. The 2 copies have different names so that we can keep one alive if our deployment is not successful. This is the `docker-compose.yaml` (with some details omitted):
+Before going through our git hook, let me explain how the architecture looks. We have one load balancer/reverse proxy, I'll be using [Caddy](https://caddyserver.com/) here. Then we will be running 2 copies of our web backend. Instead of replicating the docker-compose service, we will treat them as 2 different services with different names, they just run the same code. The 2 copies have different names so that we can keep one alive if our deployment is not successful. This is the `docker-compose.yaml` (with some details omitted):
 
 ```dockerfile
 version: "3.8"
@@ -116,16 +116,16 @@ The hook is a bash script that will do the following.
 4. Wait until `web` is ready (with a timeout)
 5. Build and start `web2`. Since it's the same as `web`, if `web` was built and run correctly, we can safely do all at once with `web2`.
 
-We will use some git environment variables to run and move the code. We are interested in 2 of them*
+We will use some git environment variables to run and move the code. We are interested in 2 of them:
 
-`GIT_DIR`: location of the remote
-`GIT_WORK_TREE`: location to put the code when it's received
+* `GIT_DIR`: location of the remote
+* `GIT_WORK_TREE`: location to put the code when it's received
 
 We already have the folder for `GIT_DIR` (the one called `gitrem/`), but we need another folder for our code. We can create it wherever we want, let's call it `appcode/`.
 
 Then we will have a loop checking for the inputs. The line `if [[ $ref =~ .*/main$ ]];` is checking that we are pushing to the `main` branch (change it to `master` or whatever you use if needed). Then with `git --work-tree=$GIT_WORK_TREE --git-dir=$GIT_DIR checkout -f main` we are copying the contents from that branch to our `GIT_WORK_TREE` folder (`appcode/`).
 
-Lastly, we will use `curl` inside a loop to wait until the first replica is alive and deploy recreate the second one.
+Lastly, we will use `curl` inside a loop to wait until the first replica is alive and recreate the second one.
 
 Here's the full code. I included so extra comments inside:
 
@@ -156,8 +156,6 @@ do
         echo "Ref $ref successfully received.  Doing nothing: only the main branch may be deployed on this server."
     fi
 done
-
-# sudo ufw allow proto tcp from any to any port 80,443
 
 # NOTE
 # here you can do other operations needed to run your app like setting the appropriate
@@ -196,9 +194,6 @@ docker-compose -f docker-compose.yaml up -d --no-deps web
 if [[ "$?" != "0" ]]; then
   echo "error while deploying image."
   exit 1
-  # docker-compose -f docker-compose.yaml up -d --no-deps --scale web2=2
-  # docker tag "$prev_tag" imagename
-  # docker-compose -f docker-compose.yaml up -d --no-deps web
 fi
 
 # (optional) some sleep time to let the first replica start
@@ -212,10 +207,15 @@ attempt_counter=0
 # max number of curl retries
 max_attempts=10
 
-# since the "web" serive is exposing port 8000 to the localhost, we can send requests to it from our
+# since the "web" service is exposing port 8000 to the localhost, we can send requests to it from our
 # script
 
-# the following loop will query the /healthz enpoint until it receives an "ok" response. It will retry every 5 seconds and each request has a timeout of 6 seconds. It will do a maximum of 10 attempts. In summary, if the app has not started in 10*6*5 = 300 seconds = 5 minutes, exit. This number is probably to high for most use cases, so change those variables for your needs.
+# the following loop will query the /healthz enpoint until it receives
+# an "ok" response.
+# It will retry every 5 seconds and each request has a timeout of 6 seconds.
+# It will do a maximum of 10 attempts.
+# In summary, if the app has not started in 10*6*5 = 300 seconds = 5 minutes, exit.
+# This number is probably to high for most use cases, so change those variables for your needs.
 
 until $(curl --output /dev/null --max-time 6 --silent --get --fail localhost:8000/healthz); do
     if [ ${attempt_counter} -eq ${max_attempts} ];then
@@ -262,7 +262,7 @@ We need to put that code inside `.git/hooks/post-receive` in our remote server. 
 We have now set up everything we need in our remote. In our local computer we can run:
 
 ```bash
-git add -u .
+git add .
 git commit --allow-empty -m "deploy" && git push production main
 ```
 
@@ -300,7 +300,7 @@ If you are wondering about the `+425368b5:main`, this is called [refspec](https:
 * `main`: branch name
 * `+`: update the reference even if it isn’t a fast-forward
 
-That will make our custom remote go to that specific commit, do a checkout and trigger the `post-receive` hook. This is also a good time to wrap things inside functions:
+That will make our custom remote go to that specific commit, do a checkout and trigger the `post-receive` hook. Now is also a good time to wrap things in bash functions:
 
 ```bash
 function tag {
@@ -323,7 +323,7 @@ function deploy {
 
 Now we can run `deploy v2` and bam! We have our app running. If you want to roll back to a previous tag, you can do it by running `totag v1` (or any other tag name).
 
-Extra, you can view all the tags in a git repository sorted by creation date with the command:
+*Extra*: you can view all the tags in a git repository sorted by creation date with the command:
 
 ```bash
 git tag --sort=taggerdate
@@ -333,4 +333,4 @@ This would also be a good chance to give the [Taskfile](https://github.com/polyr
 
 ## Wrapping up
 
-We have created a custom git remote with `post-receive` hook. It will build our app as a docker container when we push new code. We can use a few git commands to move that remote to a specific commit. We have used git tags to identify important commits (releases).
+We have created a custom git remote with a `post-receive` hook. It will build our app as a docker container when we push new code. We can use a few git commands to move that remote to a specific commit. Lastly, we have also used git tags to identify important commits (releases).
