@@ -81,6 +81,12 @@
  	 <link rel="stylesheet" href="{{ $styles.Permalink }}" data>
 	{{ else }}
  	    {{ $styles := $styles | minify | resources.PostProcess }}
- 	 <link rel="stylesheet" href="{{ $styles.Permalink }}">
+ 	    <link rel="stylesheet" href="{{ $styles.Permalink }}">
+        {{- with .Title | default .Site.Title }}
+            <script data-goatcounter="https://ricardo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+            <noscript>
+               <img src="https://ricardo.goatcounter.com/count?t={{ . | truncate 15 }}&p=/test">
+            </noscript>
+	    {{- end }}
 	{{ end }}
 </head>
