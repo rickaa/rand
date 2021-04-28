@@ -84,6 +84,9 @@
  	    <link rel="stylesheet" href="{{ $styles.Permalink }}">
         {{- with .Title | default .Site.Title }}
             <script data-goatcounter="https://ricardo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+            <!-- Cloudflare Web Analytics -->
+            <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "7456014ad3f14a2ea01c88e7b60df413"}'></script>
+            <!-- End Cloudflare Web Analytics -->
             <noscript>
                <img src="https://ricardo.goatcounter.com/count?t={{ . | truncate 15 }}&p=/test">
             </noscript>
