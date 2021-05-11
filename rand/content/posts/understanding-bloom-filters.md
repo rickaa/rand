@@ -373,9 +373,9 @@ We can implement the formula in Python
 
 
 ```python
-def proba_false_positive(set_length, vector_length, num_hash_functions):
+def proba_false_positive(set_size, vector_length, num_hash_functions):
     
-    n = set_length
+    n = set_size
     m = vector_length
     k = num_hash_functions
 
@@ -401,8 +401,8 @@ import math
 
 
 ```python
-def optimal_values(set_length, proba_false_positives):
-    n = set_length
+def optimal_values(set_size, proba_false_positives):
+    n = set_size
     ln_pfp = math.log(proba_false_positives)
     ln_2 = math.log(2)
 
@@ -415,18 +415,18 @@ def optimal_values(set_length, proba_false_positives):
 
 
 ```python
-set_length=4_000_000
+set_size=4_000_000
 proba_false_positives=0.001
 
-k, m = optimal_values(set_length=set_length, proba_false_positives=0.001)
+k, m = optimal_values(set_size=set_size, proba_false_positives=proba_false_positive)
 
 print(f"""
-For a set with {set_length} elements, if we want a prbability of false positives = {proba_false_positives},
+For a set with {set_size} elements, if we want a probability of false positives = {proba_false_positives},
 we need a bloom filter with a vector length = {m} and use {k} hash functions.
 """.strip())
 ```
 
-    For a set with 4000000 elements, if we want a prbability of false positives = 0.001,
+    For a set with 4000000 elements, if we want a probability of false positives = 0.001,
     we need a bloom filter with a vector length = 57510351 and use 10 hash functions.
 
 
@@ -440,7 +440,7 @@ In Python it would be something like:
 
 
 ```python
-def generate_hash_func(n: int) -> List[Callable]:
+def generate_hash_func(n: int) -> Callable:
     h1 = sha1_int
     h2 = md5_int
     
@@ -451,17 +451,17 @@ def generate_hash_func(n: int) -> List[Callable]:
     return new_func
 ```
 
-With everything we have learned, we can now improve our implementation. The updated class will need a `set_length` (how much data we want to store) and a `proba_false_positives` (what's the maximum probability of false positives that we can tolerate). Then we will use the new functions to set the appropriate vector length and generate the necessary hash functions.
+With everything we have learned, we can now improve our implementation. The updated class will need a `set_size` (how much data we want to store) and a `proba_false_positives` (what's the maximum probability of false positives that we can tolerate). Then we will use the new functions to set the appropriate vector length and generate the necessary hash functions.
 
 *Note*: I will also add a new method called `.add_faster()` that is slightly more optimized. The method `.add()` is easier to understand.
 
 
 ```python
 class BloomFilter:
-    def __init__(self, set_length, proba_false_positives):
+    def __init__(self, set_size, proba_false_positives):
 
         self.optimal_hash_funcs, self.optimal_vec_len = self.calculate_optim_values(
-            set_length, proba_false_positives
+            set_size, proba_false_positives
         )
 
         self.vector = [0 for _ in range(self.optimal_vec_len)]
@@ -472,8 +472,8 @@ class BloomFilter:
         self.h1 = sha1_int
         self.h2 = md5_int
 
-    def calculate_optim_values(self, set_length, proba_false_positives):
-        n = set_length
+    def calculate_optim_values(self, set_size, proba_false_positives):
+        n = set_size
         ln_pfp = math.log(proba_false_positives)
         ln_2 = math.log(2)
 
@@ -546,7 +546,7 @@ class BloomFilter:
 
 
 ```python
-bloom = BloomFilter(set_length=1_000_000, proba_false_positives=0.001)
+bloom = BloomFilter(set_size=1_000_000, proba_false_positives=0.001)
 ```
 
 
